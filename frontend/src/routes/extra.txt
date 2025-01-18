@@ -1,0 +1,24 @@
+<div className='flex gap-1 md:gap-3 mt-4 justify-center w-11/12 md:mt-4'>
+              <div className='flex flex-col text-center md:px-3 bg-yellow-300 rounded-2xl'>
+
+                <h1 className='font-[600]  achive_head text-[30px] '>20+</h1>
+                <p className='font-[600] achive_para text-[23px]'>Years Experience</p>
+
+              </div>
+              <div className='flex flex-col md:px-3  text-center  text-white bg-green-700 rounded-2xl'>
+
+                <h1 className='font-[600]  achive_head text-[30px] '>100%</h1>
+                <p className='font-[600] achive_para  text-white text-[23px]'>Satisfiction</p>
+
+              </div>
+
+
+              <div className='flex flex-col md:px-1 text-center t bg-purple-700 rounded-2xl'>
+
+                <h1 className='font-[600] achive_head text-[30px] '>50+</h1>
+                <p className='font-[700] achive_para text-[23px]'>Specialist Doctor</p>
+
+              </div>
+
+
+            </div>

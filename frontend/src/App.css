@@ -1,0 +1,61 @@
+
+*{
+    margin:0px;
+    padding:0px
+}
+
+
+
+.sticky_header{
+    width:100%;
+    height:70px;
+   
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:99999;
+    box-shadow: 3px 3px -8px 3px #ddd;
+}
+
+@media only screen and (max-width:1130px){
+    .navigation{
+        height:100%;
+        width:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:100;
+        background:#00000084;
+        display:none;
+        
+    }
+    .menu{
+        width:15rem;
+        height:100%;
+        position:absolute;
+        top:0;
+        right:0;
+        background:#fff;
+        z-index:200;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        line-height:30px;
+
+
+    }
+    .showmenu
+    {
+        display:block;
+    }
+    .menuicon{
+        display:flex;
+        justify-content: flex-end;
+    }
+    .marginhead{
+        margin-right:10px;
+        margin-left:10px;
+    }
+   
+    
+}
