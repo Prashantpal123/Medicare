@@ -1,7 +1,7 @@
 import React from 'react'
 import doctor from "../../assets/hero-img01.png"
 import about_card from "../../assets/about-card.png"
-
+ 
 const About = () => {
   return (
     <>
