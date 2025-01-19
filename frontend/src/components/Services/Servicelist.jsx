@@ -4,7 +4,7 @@ const Servicelist = () => {
   return (
 
     <>
-    <div >
+    <div className='' >
       <Service_card/> 
      
     
