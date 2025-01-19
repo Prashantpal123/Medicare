@@ -4,12 +4,13 @@ import star from "../../assets/Star.png"
 import { useState } from 'react'
 import Doctor_about from './Doctor_about'
 import Feedback from './Feedback'
+import SidePanel from './SidePanel'
 const Doctordetail = () => {
  const [tab, settab] = useState()
 
   return (
-    <div className='max-w-[1170px] px-5 mx-auto'>
-      <div className='grid md:grid-col-col-3 gap-[50px] md:mt-16'>
+    <div className='max-w-[1270px] px-5 mx-auto md:flex md:justify-between'>
+      <div className='grid md:grid-col-3  gap-[50px] md:mt-16 '>
         <div className='md:col-span-2'>
           <div className='flex items-center gap-5'>
             <figure className=' max-w-[300px] max-h-[300px]'>
@@ -67,9 +68,12 @@ const Doctordetail = () => {
           {tab==="about" && <Doctor_about/>}
           {tab==="feedback" && <Feedback/>}
           </div>
-
+        
         </div>
+        
+      
       </div>
+      <div className='md:min-w-[400px] md:mt-[56px] '>  <SidePanel/></div>
 
     </div>
   )
