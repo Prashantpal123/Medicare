@@ -12,6 +12,18 @@
         @apply bg-[url('./assets/hero-bg.png')] bg-no-repeat bg-center bg-cover w-full
     }
 
+    .form_label{
+       @apply font-semibold text-[16px] leading-7 mb-2
+
+
+    }
+    .form_input{
+        @apply w-full px-4 py-3 border-solid border-[#0066ff61]
+        focus:outline-none focus:border-sky-600 text-[16px] leading-7
+        text-slate-900 placeholder:text-gray-600
+        cursor-pointer rounded-md
+    }
+
 
 
 }
