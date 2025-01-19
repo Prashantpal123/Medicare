@@ -41,11 +41,15 @@ const Feedback = () => {
       </div>
      </div>
     {
-      !showfeedbackform &&  (<div className='text-center '>
-      <button className='bg-sky-700 hover:bg-sky-800 text-white rounded-full px-2 text-[24px] py-1 font-semibold md:px-3
-      ' onClick={()=>setshowfeedbackform(true)}>Give Feedback</button>
-     </div>)
+      !showfeedbackform &&  (<div className='flex
+        justify-center'>
+        <button className=' bg-sky-600 rounded-[50px]  hover:bg-sky-700  text-white py-1 px-3  md:py-2 md:px-6 md:text-[20px]  font-[600] md:h-[44px]  '
+         onClick={()=>setshowfeedbackform(true)}>
+           Give Feedback
+       </button>
+        </div>)
     }
+      
 
 
 

@@ -8,6 +8,10 @@ const Feedback_form = () => {
  const [rating, setrating] = useState(0)
  const [hover, sethover] = useState(0)
 const [review, setreview] = useState()
+const handleSubmitReview =async e=>
+{
+  e.preventDefault()
+}
 
   return (
     <form action="">
@@ -24,6 +28,14 @@ const [review, setreview] = useState()
         ></textarea>
    
      </div>
+     <div className='flex
+     justify-center'>
+     <button className=' bg-sky-600 rounded-[50px]  hover:bg-sky-700  text-white py-1 px-3  md:py-2 md:px-6 md:text-[20px]  font-[600] md:h-[44px] '
+     type='submit' onClick={handleSubmitReview}>
+        Submit Feedback
+    </button>
+     </div>
+   
 
 
 
