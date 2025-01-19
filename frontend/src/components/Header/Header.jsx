@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect,useRef } from 'react';
-import {NavLink,Link} from 'react-router-dom';
-import userImg from '../../assets/ravi.jpg';
+import {NavLink,Link} from 'react-router-dom'; 
 import logo from '../../assets/logo.png';
 import {BiMenu} from "react-icons/bi";
+import userImg  from "../../assets/avatar-icon.png"
 const navLinks =[
  {
   path:'/home',
@@ -62,7 +62,7 @@ const Header = () => {
      {/* --------------logo---------*/}
  
  <div className='flex items-center  '>
-  <img className=' lg:h-14' src={logo}  alt="logo" />
+  <img className=' ' src={logo}  alt="logo" />
  </div>
 
  {/*-----------menu-----*/}
@@ -71,7 +71,7 @@ const Header = () => {
     {
 
 navLinks.map((Link,index)=><li key={index}>
-  <NavLink to={Link.path} className={navClass=>navClass.isActive?"text-blue-600 md:text-[23px] leading-7 font-[600]":'text-zinc-600 lg:text-[23px] leading-7 font-[600] hover:text-slate-400'}>{Link.display}</NavLink>
+  <NavLink to={Link.path} className={navClass=>navClass.isActive?"text-blue-600 md:text-[18px] leading-7 font-[600]":'text-zinc-600 lg:text-[18px] leading-7 font-[600] hover:text-slate-400'}>{Link.display}</NavLink>
 </li>
     )
     }
@@ -81,10 +81,10 @@ navLinks.map((Link,index)=><li key={index}>
    {/*---------------menue right-------------*/}
 
 <div className='flex items-center gap-'>
-  <div className='hidden'>
+  <div className=''>
     <Link to="/">
-    <figure className='w-[35px] h-[35px] rounded-full flex items-center'>
-      <img className='w-full rounded-[700px]' src={userImg } alt="img" />
+    <figure className='w-[35px] h-[35px] mx-2 rounded-full flex items-center'>
+      <img className='w-full rounded-full' src={userImg } alt="img" />
 
     </figure>
     </Link>
@@ -93,8 +93,9 @@ navLinks.map((Link,index)=><li key={index}>
 
 
   <Link to='/login'
-  className=' bg-sky-600 rounded-[50px]  hover:bg-sky-700 '>
-    <button className='text-white py-1 px-3  md:py-2 md:px-6 md:text-[20px]  font-[600] md:h-[44px]  '>
+  className=''>
+    <button className='text-white  bg-sky-600 rounded-[20px]  hover:bg-sky-700 py-1
+     px-3  md:py-1 md:my-2 md:px-4 md:text-[18px]  font-[600]   '>
       Login
     </button>
     </Link>
