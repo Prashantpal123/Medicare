@@ -31,10 +31,10 @@ const Signup = () => {
 
   return (
     <section className='px-5 xl:px-0'>
-      <div className='max-w-[1170px] md:mt-24 mx-auto'>
+      <div className='max-w-[1100px] md:mt-8 mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/*=======img box ==========*/}
-          <div className='hidden lg:block bg-sky-600 rounded-2xl '>
+          <div className='hidden lg:block bg-sky-600 max-w-[500px]  rounded-2xl '>
             <figure className=''>
               <img src={signupImg} alt="img" className='w-full rounded-md' />
 
@@ -43,9 +43,9 @@ const Signup = () => {
 
 
           {/*=========signup form=======*/}
-          <div className='rounded-l-lg lg:pl-16 py-10'>
-            <h3 className='text-slate-900 text-[22px] md:text-[36px] leading-9
-          font-bold mb-10'>
+          <div className='rounded-l-lg lg:pl-16 md:py-1'>
+            <h3 className='text-slate-900 text-[22px] md:text-[30px] leading-9
+          font-bold md:mb-4'>
               Create an <span className='text-sky-600'>account</span>
 
             </h3>
@@ -101,13 +101,13 @@ const Signup = () => {
 
               <div className='mb-5 flex items-center justify-between'>
                 <label
-                  className='text-slate-900 font-bold text-[16px]  md:text-[20px] leadin-7'>
+                  className='text-slate-900 font-bold text-[16px]  leadin-7'>
                   Are you a
                   <select name="role" id="
               "
                     value={formData.role}
                     onChange={handleInputChange}
-                    className='text-gray-600 font-semibold text-[15px] md:text-[18px]  leading-7 px-4
+                    className='text-gray-600 font-semibold text-[15px]   leading-7 px-4
               py-3 focus:outline-none'>
                     <option value="patient">Patient</option>
                     <option value="doctor">Doctor</option>
@@ -116,13 +116,13 @@ const Signup = () => {
 
 
                 <label
-                  className='text-slate-900 font-bold text-[16px] md:text-[20px]  leadin-7'>
+                  className='text-slate-900 font-bold text-[16px]   leadin-7'>
                   Gender
                   <select name="gender" id="
               "
                     value={formData.gender}
                     onChange={handleInputChange}
-                    className='text-gray-600 font-semibold text-[15px] md:text-[18px] leading-7 px-4
+                    className='text-gray-600 font-semibold text-[15px]  leading-7 px-4
               py-3 focus:outline-none'>
                     <option value="Male">Male</option>
                     <option value="Doctor">Female</option>
@@ -132,11 +132,11 @@ const Signup = () => {
               </div>
 
               <div className='mb-5 flex items-center gap-3'>
-                <figure className='w-[60px] h-[60px] rounded-full border-2 border-solid border-sky-600
+                <figure className='w-[50px] h-[50px] rounded-full border-2 border-solid border-sky-600
             flex items-center justify-center'>
                   <img className='w-full' src={avatar} alt="" />
                 </figure>
-                <div className='relative w-[130px] h-[50px]'>
+                <div className='relative w-[120px] h-[40px]'>
                   <input
                     type="file"
                     name="photo"
@@ -161,7 +161,7 @@ const Signup = () => {
 
 
               <div className='flex justify-center md:mt-8'>
-                <button className='bg-red-600 hover:bg-red-700 text-white text-[20px] py-1 md:text-[25px] md:px-40 
+                <button className='bg-red-600 hover:bg-red-700 text-white text-[20px] py-1 md:text-[20px] md:px-20 
           px-32 rounded-[10px] font-[600]'>Signup</button>
               </div>
               <p className='mt-5 text-gray-500 text-center '>

@@ -4,7 +4,7 @@ import Service_card from '../components/Services/Service_card'
 const Services = () => {
   return (
     <>
-      <div className=' bg-[#fff9ea] md:py-8'>
+      <div className=' bg-[#fff9ea] md:py-8  '>
 
 
         <div className=''>
@@ -15,8 +15,9 @@ const Services = () => {
               unmatched, expert health care.</p> </div>
 
         </div>
-        <div className=' md:my-9'>
-          <Service_card />
+        <div className=' md:my-5  w-full flex justify-center'>
+          <div className=' max-w-[1100px]'>   <Service_card />   </div>
+        
         </div>
       </div>
     </>

@@ -45,7 +45,7 @@ const Login = () => {
         </div>
 
         <div className='flex justify-center md:mt-8'>
-          <button className='bg-blue-600 hover:bg-blue-700 text-white text-[20px] py-1 md:text-[25px] md:px-40 
+          <button className='bg-blue-600 hover:bg-blue-700 text-white text-[20px] py-1 md:px-40 
           px-32 rounded-[10px] font-[600]'>Login</button>
         </div>
         <p className='mt-5 text-gray-500 text-center '>

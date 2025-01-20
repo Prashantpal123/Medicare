@@ -4,7 +4,8 @@ import {doctors} from './../../assets/data/Doctor'
 
 const Doctors = () => {
   return (
-    <div className='doctor_container bg-[#fff9ea] md:pt-12'>
+    <div className='doctor_container flex justify-center  bg-[#fff9ea] md:pt-10  w-full'>
+      <div className='max-w-[1100px] '>
       
     <div className='text-center flex flex-col items-center   '>
       <h2 className='md:font-bold md:text-[30px]  text-slate-800   '>Find a Doctor</h2>
@@ -23,7 +24,7 @@ const Doctors = () => {
 
     </div>
     <div className='flex justify-center'>
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px]'>
 
 {doctors.map((doctor)=>(
    <Doctor_card key={doctor.id} doctor={doctor}/>
@@ -32,6 +33,8 @@ const Doctors = () => {
 </div>
 </div>
 
+
+</div>
 
     </div>
   )

@@ -20,7 +20,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 
@@ -48,7 +48,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 
@@ -76,7 +76,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-400 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 
@@ -113,7 +113,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 
@@ -141,7 +141,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 
@@ -169,7 +169,7 @@ const Service_card = () => {
                     <div className='flex mt-3 md:mt-6 justify-between '>
                         <Link to="/doctors" className='flex justify-center '>
 
-                            <BsArrowRightCircle className='text-[50px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
+                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
 
                         </Link>
 

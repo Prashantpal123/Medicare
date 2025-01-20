@@ -76,8 +76,8 @@ const Footer = () => {
   const year = new Date().getFullYear()
   return (
     <footer>
-      <div className='footer_container mx-3 flex justify-center md:mt-24 mt-16 '>
-        <div className='flex justify-between flex-col md:flex-row flex-wrap gap-[30px] md:gap-[120px]'>
+      <div className='footer_container mx-3 flex justify-center  mt-16 mb-8  '>
+        <div className='flex max-w-[1100px] justify-between flex-col md:flex-row flex-wrap gap-[30px] md:gap-[50px]'>
           <div>
             <img src={logo} alt="" />
             <p className='text-[16px] leading-7 font-[400] text-gray-400 mt-4'>
@@ -90,9 +90,9 @@ const Footer = () => {
               
                   <Link
                     to={item.path}
-                    className='flex w-12 h-12  
+                    className='flex w- h-12  
                     item center justify-center
-                     '> <div className=''>{item.icon}</div></Link>
+                     '> <div className='h'>{item.icon}</div></Link>
                 
 
               ))}
@@ -104,14 +104,14 @@ const Footer = () => {
           </div>
           <div>
 
-            <h2 className='text-[20px] leading-[30px] font-[700] 
-            mb-6 text-slate-900 '>Quick Links</h2>
+            <h2 className='text-[15px] lg:text-[20px] leading-[30px] font-[700] 
+             text-slate-900 '>Quick Links</h2>
             <ul>
               {quicklinks01.map((item, index) => (
-                <li key={index} className='mb-4'>
+                <li key={index} className=''>
                   <Link
                     to={item.path}
-                    className='text-[16px] leading-7 hover:text-[20px] hover:font-bold hover:text-sky-600 font-[400] text-gray-600'>{item.display}</Link>
+                    className='text-[16px]   hover:text-sky-600 font-[400] text-gray-600'>{item.display}</Link>
                 </li>
 
               ))}
@@ -121,14 +121,14 @@ const Footer = () => {
 
           <div>
 
-            <h2 className='text-[20px] leading-[30px] font-[700] 
-            mb-6 text-slate-900 '>Find a Doctor :</h2>
+            <h2 className='text-[15px] lg:text-[20px]  font-[700] 
+             text-slate-900 '>Find a Doctor :</h2>
             <ul>
               {quicklinks02.map((item, index) => (
-                <li key={index} className='mb-4'>
+                <li key={index} className=''>
                   <Link
                     to={item.path}
-                    className='text-[16px] leading-7 hover:text-[20px] hover:font-bold hover:text-sky-600 font-[400] text-gray-600'>{item.display}</Link>
+                    className='text-[16px]    hover:text-sky-600 font-[400] text-gray-600'>{item.display}</Link>
                 </li>
 
               ))}
@@ -140,14 +140,14 @@ const Footer = () => {
 
           <div>
 
-            <h2 className='text-[20px] leading-[30px] font-[700] 
-            mb-6 text-slate-900 '>I Want To Support</h2>
+            <h2 className='text-[20px]  font-[700] 
+             text-slate-900 '>I Want To Support</h2>
             <ul>
               {quicklinks03.map((item, index) => (
-                <li key={index} className='mb-4'>
+                <li key={index} className=''>
                   <Link
                     to={item.path}
-                    className='text-[16px] leading-7 font-[400] hover:text-[20px] hover:font-bold hover:text-sky-600 text-gray-600'>{item.display}</Link>
+                    className='text-[16px]  font-[400] hover:text-[20px] hover:font-bold hover:text-sky-600 text-gray-600'>{item.display}</Link>
                 </li>
 
               ))}
