@@ -11,7 +11,8 @@ export const authenticate = async (req, res, next) => {
     if (!authToken || !authToken.startsWith("Bearer ")) {
       return res
         .status(401)
-        .json({ success: false, message: "No token, authorization denied" });
+        .json({ success: false, message: "No token, authorization denied" })
+        ;
     }
 
     // Extract the token from the "Bearer" header

@@ -11,7 +11,7 @@ export const UpdateDoctor = async (req, res) => {
             .json(
                 {
                     success: true,
-                    message:  "vdoctor Successfully updated",
+                    message:  "doctor Successfully updated",
                     data: UpdatedDoctor
         
                 })
@@ -56,6 +56,7 @@ export const getSingleDoctor = async (req, res) => {
         const doctor = await Doctor.findById(
             id,
             ).select("-password")
+            .populate('reviews')
         res.status(200)
             .json(
                 {
