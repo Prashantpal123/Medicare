@@ -9,81 +9,49 @@ const generateToken=user=>{
 }
 
 
-
 export const register = async (req, res) => {
+  const { email, password, name, role, photo, gender } = req.body;
 
+  try {
+    // Validate input
+    if (!email || !password || !name || !role || !gender) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+    if (role !== "patient" && role !== "doctor") {
+      return res.status(400).json({ message: "Invalid role" });
+    }
 
-   const { email, password, name, role, photo, gender } = req.body
+    // Check if user already exists
+    let user = await User.findOne({ email }) || await Doctor.findOne({ email });
+    if (user) {
+      return res.status(400).json({ message: "User already exists" });
+    }
 
-   try {
-      let user = null
-      if (role == "patient") {
-         user = await User.findOne({ email })
-      }
-      else if (role == "doctor") {
-         user = await Doctor.findOne({ email })
-      }
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(password, salt);
 
-      //checking  if user allready exist
+    // Create user or doctor based on role
+    const Model = role === "patient" ? User : Doctor;
+    user = new Model({
+      name,
+      email,
+      password: hashPassword,
+      photo,
+      gender,
+      role,
+    });
 
-      if (user) 
-         { return res.status(400).json({ message: "User already exist" }) }
+    // Save user
+    await user.save();
 
+    res.status(201).json({ success: true, message: "User successfully created" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 
-      // hash password
-      const salt = await bcrypt.genSalt(10)
-      const hashPassword = await bcrypt.hash(password, salt)
-
-
-
-      //creating user in database
-      if (role == "patient") {
-         user = new User(
-            {
-               name,
-               email,
-               password: hashPassword,
-               photo,
-               gender,
-               role,
-
-
-
-            }
-         )
-      }
-
-
-
-      //creating doctor in database
-      if (role == "doctor") {
-         user = new Doctor(
-            {
-               name,
-               email,
-               password: hashPassword,
-               photo,
-               gender,
-               role,
-
-
-
-            }
-         )
-      }
-
-
-      //   saving user 
-      await user.save()
-      res.status(200).json({ success: true, message: "User succesfully created" })
-
-
-
-   } catch (error) {
-      res.status(500).json({ success: false, message: 'server error' })
-
-   }
-}
 
 
 ///Login////

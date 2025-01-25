@@ -8,6 +8,7 @@ import  authRoute from "./Routes/auth.js"
 import  doctorRoute from "./Routes/doctor.js"
 import reviewRoute from "./Routes/review.js"
 
+
 dotenv.config();
 const app=express()    
 const port =process.env.Port || 8000
@@ -44,7 +45,10 @@ const connectDB= async()=>{
 
 
 // middleware
-app.use(express.json());
+app.use(express.json()); // To parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // To parse URL-encoded data
+
+
 app.use(cookieParser());
 app.use(cors(corsOption));
 app.use('/api/v1/auth', authRoute)
