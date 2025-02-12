@@ -1,9 +1,11 @@
 import React from 'react'
-import { useEffect,useRef } from 'react';
+import { useEffect,useRef,useContext } from 'react';
 import {NavLink,Link} from 'react-router-dom'; 
 import logo from '../../assets/logo.png';
 import {BiMenu} from "react-icons/bi";
 import userImg  from "../../assets/avatar-icon.png"
+import  {authContext}  from '../../context/Authcontext.jsx';
+
 const navLinks =[
  {
   path:'/home',
@@ -26,6 +28,7 @@ const navLinks =[
 
 const Header = () => {
   const headerRef =useRef(null)
+  const {user,role,token}=useContext(authContext)
   const menuRef= useRef(null)
   const handlestickyheader=()=>{
     window.addEventListener('scroll',()=>{
@@ -80,21 +83,25 @@ navLinks.map((Link,index)=><li key={index}>
    </div>
    {/*---------------menue right-------------*/}
 
-<div className='flex items-center gap-'>
-  <div className=''>
-    <Link to="/">
-    <figure className='w-[35px] h-[35px] mx-2 rounded-full flex items-center'>
-      <img className='w-full rounded-full' src={userImg } alt="img" />
 
-    </figure>
-    </Link>
+  {token && user ? <div className='flex items-center gap-'>
+     
+      <div><h1>{user.name}</h1></div>
+      <Link to={`${role=="doctor"?"/doctors/profile/me":"/users/profile/me"}`}>
+    <figure className='w-[35px] h-[35px] mx-2 rounded-full flex items-center'>
+      <img className='w-full rounded-full' src={user.photo} alt="img" />
+
+    </figure></Link>
+    
    
-  </div>
+  </div>:<div className='flex '>
+ 
+ 
 
 
   <Link to='/login'
   className=''>
-    <button className='text-white  bg-sky-600 rounded-[20px]  hover:bg-sky-700 py-1
+    <button className='text-white mt-4 md:mt-4 md:mx-3  bg-sky-600 rounded-[20px]  hover:bg-sky-700 py-1
      px-3  md:py-1 md:my-2 md:px-4 md:text-[18px]  font-[600]   '>
       Login
     </button>
@@ -104,7 +111,8 @@ navLinks.map((Link,index)=><li key={index}>
     <BiMenu className='w-10 h-16 cursor-pointer'/>
     </span>
     
-</div>
+</div>}
+  
   </div>
  
   

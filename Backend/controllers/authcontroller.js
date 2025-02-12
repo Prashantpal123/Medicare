@@ -3,6 +3,7 @@ import User from "../models/UserSchema.js"
 import Doctor from "../models/DoctorSchema.js"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
+import cookieParser from "cookie-parser"
 
 const generateToken=user=>{
    return jwt.sign({id:user._id,role:user.role},process.env.JWT_SECRET_KEY)
@@ -98,9 +99,11 @@ export const login = async (req, res) => {
     //get token--
     const token =generateToken(user);
     const {password,role,appoinments, ...rest}=user._doc
+    
 
 
-    return res.status(200).json({ status:true ,message:"sucessfully",token,data:{...rest},role})
+    return res.status(200).cookie("authtoken",token)
+    .json({ status:true ,message:"sucessfully",token,data:{...rest},role})
 
 
    } catch (error) {

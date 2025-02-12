@@ -20,7 +20,7 @@ const corsOption=
 }
 
 
-app.get('/',(req,res)=>
+app.get('/',(req,res)=> 
 {
     res.send("Api is working")
 
@@ -32,7 +32,7 @@ const connectDB= async()=>{
         await mongoose.connect(process.env.MONGO_URL, {
         
             
-           
+            
         })
         console.log("mongoDB is connected Sucessfully")    }
 

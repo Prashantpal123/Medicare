@@ -6,13 +6,19 @@ import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/ReactToastify.css"
+import { AuthContextProvider } from './context/Authcontext.jsx'
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+
     <BrowserRouter>
-    <ToastContainer theme='dark'
+<AuthContextProvider>
+     <ToastContainer theme='dark'
     />
-    <App />
-    </BrowserRouter>
+ 
    
-  </StrictMode>,
+    <App />
+    </AuthContextProvider>
+
+   
+    </BrowserRouter>
+   ,
 )
