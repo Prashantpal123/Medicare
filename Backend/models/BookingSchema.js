@@ -2,20 +2,20 @@ import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema(
   {
-    doctor: {
+    doctorId: {
       type: mongoose.Types.ObjectId,
       ref: "Doctor",
       required: true,
     },
-    user: {
+    userId: {
       type: mongoose.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    ticketPrice: { type: String, required: true },
+    ticketPrice: { type: String, },
     appointmentDate: {
       type: Date,
-      required: true,
+      
     },
     status: {
       type: String,
@@ -24,7 +24,7 @@ const bookingSchema = new mongoose.Schema(
     },
     isPaid: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   { timestamps: true }

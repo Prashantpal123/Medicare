@@ -5,24 +5,40 @@ import { useState } from 'react'
 import Doctor_about from './Doctor_about'
 import Feedback from './Feedback'
 import SidePanel from './SidePanel'
-const Doctordetail = () => {
+import useFetchData from '../../Hooks/usefetchData'
+import { BASE_URL, token } from '../../config'
+import { useParams } from 'react-router-dom'
+const Doctordetail =  () => {
+  const { id } = useParams();
  const [tab, settab] = useState()
+ const { data, loading, error } = useFetchData(`${BASE_URL}/api/v1/doctors/${id}`);
+ if (loading) return <div>Loading...</div>; // Show loading message while fetching
+ if (error) return <div>Error: {error}</div>;
+
+
+ const doctor = data.data;
+ 
+ console.log(token);
+ 
+
+ 
+
 
   return (
     <div className='max-w-[1270px] px-5 mx-auto md:flex md:justify-between'>
       <div className='grid md:grid-col-3  gap-[50px] md:mt-16 '>
         <div className='md:col-span-2'>
           <div className='flex items-center gap-5'>
-            <figure className=' max-w-[300px] max-h-[300px]'>
-              <img src={doctorimg} alt="" />
+            <figure className=' max-w-[300px] '>
+              <img src={doctor.photo} alt="" />
             </figure>
             <div>
               <span className='bg-[#ccf0f3] text-emerald-400 py-1 px-6 lg:py-2 lg:px-8 text-[12px]
-              leading-4 lg:text-[18px] lg:leading-7 font-semibold rounded'>Surgeon
-
+              leading-4 lg:text-[18px] lg:leading-7 font-semibold rounded'>
+                 {doctor.specialization}
               </span>
               <h3 className='text-slate-900 text-[22px] lg:text-[28px] leading-9 mt-3 font-bold'>
-               Muhibur Rahman
+               {doctor.name}
               </h3>
               <div className='flex items-center gap-[6px]'>
                 <span className='flex items-center gap-[6px] text-[14px]  leading-5 lg:text-[16px]

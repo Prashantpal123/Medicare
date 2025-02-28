@@ -1,18 +1,86 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import useFetchData from '../../Hooks/usefetchData'
+import { BASE_URL, token } from '../../config'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useContext } from 'react'
+import { authContext } from '../../context/Authcontext'
 const SidePanel = () => {
+    const [loadiing, setLoadiing] = useState(false);
+    const [message, setMessage] = useState("");
+     const {user,role,token}=useContext(authContext)
+    const { id } = useParams();
+
+
+    const [alreadyBooked, setAlreadyBooked] = useState(false);
+
+  
+    
+
+  
+    const { data, loading, error } = useFetchData(`${BASE_URL}/api/v1/doctors/${id}`);
+    if (loading) return <div>Loading...</div>; // Show loading message while fetching
+    if (error) return <div>Error: {error}</div>;
+ 
+   console.log(user);
+   
+    const doctor = data.data;
+    console.log(doctor);
+ 
+    const handleBooking = async () => {
+        if (!user) {
+          return setMessage("Please log in to book an appointment.");
+        }
+    
+        setLoadiing(true);
+    
+        try {
+          const response = await fetch("http://localhost:5000/api/v1/bookings", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`, // Send token for authentication
+            },
+            body: JSON.stringify({
+              doctorId: doctor._id,
+              userId: user._id, // Logged-in user's ID
+              date: "2025-02-28", // Replace with actual selected date
+              time: "10:00 AM", // Replace with actual selected time
+            }),
+          });
+    
+          const data = await response.json();
+          if (response.ok) {
+            setMessage("Booking successful!");
+          } else {
+            setMessage(data.error || "Booking failed.");
+          }
+        } catch (error) {
+          setMessage("An error occurred. Please try again.");
+        }
+    
+        setLoadiing(false);
+      };
+
+    
+    
+      
+    
+ 
+
+
   return (
     <div className=' shadow-2xl p-3 lg:p-5 rounded-md'>
         <div className='flex items-center justify-between '>
             <p className='mt-0 font-bold text-[25px] '>Ticket Price</p>
             <span className='text-[16px] leading-7 lg:text-[22px] lg:leading-8
-            text-slate-900 font-semibold'>500 BDT</span>
+            text-slate-900 font-semibold'>{doctor.ticketPrice}/. </span>
         </div>
 
         <div className='mt-[30px]'>
             <p className='text-[16px] lg:text-[20px] mt-0 font-semibold text-slate-900
             '>
-                Available Time Slots:
+               Available Time Slots:
 
             </p>
             <ul className='mt-3'>
@@ -39,8 +107,9 @@ const SidePanel = () => {
 
             </ul>
             <div className='flex justify-center'> 
-            <button className=' bg-sky-600 rounded-[10px]  hover:bg-sky-700  text-white py-1 px-3 
-             md:py-2 w-full  md:text-[20px]  font-[600] md:h-[44px]'> Book Appoinment</button>
+            <button onClick={handleBooking} disabled={alreadyBooked} className= {` bg-sky-600 rounded-[10px]    text-white py-1 px-3 
+             md:py-2 w-full text-[19px]   md:text-[20px]  font-[600] md: h-[44px] hover:bg-sky-700  ` }>      {alreadyBooked ? "Already Booked" : "Book Appointment"}
+   </button>
 
             </div>
             

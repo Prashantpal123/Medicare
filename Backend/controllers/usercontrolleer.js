@@ -1,6 +1,7 @@
 import User from '../models/UserSchema.js'
 import Booking from "../models/BookingSchema.js"
 import Doctor from '../models/DoctorSchema.js';
+
 export const updateUser = async (req, res) => {
     const id = req.params.id; 
     try {
@@ -133,4 +134,24 @@ export const getUserProfile = async (req, res) => {
       res.status(500).json({ success: false, message: "Something went wrong, cannot get" });
     }
   };
+
+
+  export const bookAppointmentController= async (req ,res) => {
+    try {
+        
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(
+            {
+                success:false,
+                error,
+                message:'Error while Booking Appointment'
+            }
+        )
+        
+        
+    }
+    
+  }
   

@@ -2,7 +2,16 @@ import React from 'react';
  import star from "./../../assets/Star.png"
  import { Link, NavLink } from 'react-router-dom'
 import { BsArrowRightCircle } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
+import useFetchData from '../../Hooks/usefetchData';
+import { BASE_URL } from '../../config';
+
+
 const Doctor_card = ({doctor}) => {
+  const { data, loading, error } = useFetchData(`${BASE_URL}/api/v1/doctors/`);
+
+ 
+  const navigate = useNavigate();
 
 const {name,avgRating,totalRating,photo,specialization,totalPatients,hospital,}=doctor;
 
@@ -34,10 +43,10 @@ const {name,avgRating,totalRating,photo,specialization,totalPatients,hospital,}=
                 <h3 className='text-[16px] leading-7  lg:leading-[30px] font-semibold text-zinc-900'>{totalPatients} Patients</h3>
             <p className='text-[14px] lead6 font-[400] text-gray-500'> At {hospital}</p>
              </div>
-                <Link to="/doctors" className='flex justify-center mt-3 '>
+             <button       onClick={() => navigate(`/doctors/${doctor._id}`)} className='flex justify-center mt-3 '>
                           <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
             
-                        </Link>
+                      </button>
         </div>
     
     </div>
