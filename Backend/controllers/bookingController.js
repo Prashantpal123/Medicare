@@ -1,4 +1,10 @@
+
+
+
 import Booking from "../models/BookingSchema.js";
+import User from "../models/UserSchema.js";
+import Doctor from "../models/DoctorSchema.js";
+
 
 
 // Create a new booking
@@ -14,14 +20,15 @@ export const createBooking = async (req, res) => {
     }
     const existingBooking = await Booking.findOne({ doctorId, userId });
     if (existingBooking) {
-      return res.status(400).json({ error: "You have already booked an appointment with this doctor." });}
+      return res.status(400).json({ error: "You have already booked an appointment with this doctor." });
+    }
 
     try {
       // ✅ Create a new booking
       const newBooking = new Booking({
         doctorId,
         userId,
-       
+
       });
 
       // ✅ Save booking
@@ -30,11 +37,59 @@ export const createBooking = async (req, res) => {
       res.status(201).json({ message: "Booking successful!", booking: newBooking });
     } catch (saveError) {
       console.error("❌ Error saving booking:", saveError);
-      console.error("❌ Error saving booking:", saveError.message); 
+      console.error("❌ Error saving booking:", saveError.message);
       return res.status(500).json({ error: "Error saving booking. Please try again." });
     }
   } catch (error) {
     console.error("❌ General Error:", error);
+    res.status(500).json({ error: "Server error. Please try again." });
+  }
+};
+
+
+
+export const getPendingBookingsForDoctor = async (req, res) => {
+  try {
+    const doctorId = req.userId; // Get doctor ID from logged-in user
+
+    if (!doctorId) {
+      return res.status(400).json({ error: "Doctor ID is required." });
+    }
+
+    // ✅ Fetch only pending bookings for this doctor
+    const pendingBookings = await Booking.find({ doctorId: doctorId, status: "pending" })
+    for (let booking of pendingBookings) {
+      if (booking.userId) { // Check if userId is not null
+        const user = await Doctor.findById(booking.userId).select("name photo");
+        if (user) {
+          booking._doc.name = user.name; // Attach user's name
+          booking._doc.photo = user.photo; 
+        }
+        else {
+          const user = await User.findById(booking.userId).select("name photo");
+          if (user) {
+
+            booking._doc.name = user.name; // Attach user's name
+            booking._doc.photo = user.photo; 
+          }
+          else {
+            console.log(`User not found for ID: ${booking.userId}`);
+            booking._doc.name = "Unknown";
+            booking._doc.photo = null;
+          }
+        }
+
+      } else {
+        console.log(`Booking ${booking._id} has null userId`);
+        booking._doc.name = "Unknown";
+      }
+    }
+
+
+
+    res.status(200).json(pendingBookings);
+  } catch (error) {
+    console.error("Error fetching pending bookings:", error.message);
     res.status(500).json({ error: "Server error. Please try again." });
   }
 };

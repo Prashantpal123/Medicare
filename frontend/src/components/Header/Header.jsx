@@ -86,12 +86,15 @@ navLinks.map((Link,index)=><li key={index}>
 
   {token && user ? <div className='flex items-center gap-'>
      
-      <div><h1>{user.name}</h1></div>
+      
       <Link to={`${role=="doctor"?"/doctors/profile/me":"/users/profile/me"}`}>
-    <figure className='w-[35px] h-[35px] mx-2 rounded-full flex items-center'>
-      <img className='w-full rounded-full' src={user.photo} alt="img" />
+    <figure className=' mx-2   flex items-center'>
+      <img className='rounded-full object-cover w-10 h-10 -1' src={user.photo} alt="img" />
 
     </figure></Link>
+    <span className='md:hidden menuicon' onClick={toggleMenu}>
+    <BiMenu className='w-10 h-9 cursor-pointer'/>
+    </span>
     
    
   </div>:<div className='flex '>

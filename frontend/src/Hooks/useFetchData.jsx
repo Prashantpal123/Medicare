@@ -1,40 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { token } from '../config';
 
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true); // Set initial loading to true
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(url, {
-          headers: {
-            Authorization: `Bearer ${token}`, // Add the token in headers
-          },
-        });
+  // ✅ Define fetchData function inside useCallback for reuse
+  const fetchData = useCallback(async () => {
+    setLoading(true); // Ensure loading state updates on each fetch
+    setError(null); // Reset error before fetching
+    try {
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include token in headers
+        },
+      });
 
-        const result = await res.json(); // Parse JSON from the response
+      const result = await res.json(); // Parse JSON response
 
-        if (!res.ok) {
-          throw new Error(result.message || 'Failed to fetch data 😔');
-        }
-
-        setData(result); // Store the data
-      } catch (err) {
-        setError(err.message); // Store the error message
-      } finally {
-        setLoading(false); // Set loading to false after fetch attempt
+      if (!res.ok) {
+        throw new Error(result.message || 'Failed to fetch data 😔');
       }
-    };
 
+      setData(result); // Update state with new data
+    } catch (err) {
+      setError(err.message); // Store error message
+    } finally {
+      setLoading(false); // Ensure loading is false after fetch
+    }
+  }, [url]); // ✅ Runs again only when `url` changes
+
+  // ✅ Fetch data when component mounts or `url` changes
+  useEffect(() => {
     fetchData();
-  }, []); // Dependency array ensures that the effect runs when the URL changes
+  }, [fetchData]); // ✅ Now fetchData is stable & won’t cause unnecessary re-renders
 
-  return { data, loading, error };
+  return { data, loading, error, refetch: fetchData }; // ✅ Return refetch function
 };
 
 export default useFetchData;
-
 

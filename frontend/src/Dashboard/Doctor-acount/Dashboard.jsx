@@ -5,8 +5,8 @@ import MainDash from "./Main-dash";
 import { authContext } from "../../context/Authcontext";
 
 const Dashboard = () => {
-   const {dispatch}= useContext(authContext)
-    const [activePage, setActivePage] = useState("Appointments");
+   const {dispatch,user}= useContext(authContext)
+    const [activePage, setActivePage] = useState("Dashboard");
     const handleLogout=()=>{
       dispatch({type:"LOGOUT"})
     }
@@ -14,7 +14,7 @@ const Dashboard = () => {
     <div className="md:flex  bg-gray-100">
       {/* Sidebar */}
       <div className=" flex md:flex-col md:w-1/5 w-full  bg-white shadow-md md:p-5">
-        <h2 className="text-xl hidden md:block font-bold text-blue-600">Prescripto</h2>
+        <h2 className="text-xl hidden md:block font-bold text-blue-600">{user.name}</h2>
         <button className="mt-3 hidden md:block bg-gray-200 text-xs md:px-3 py-1 rounded-full">Doctor</button>
         <nav className="md:mt-5 w-full   mt-2 mx-2">
           <ul className="flex justify-between md:flex-col">

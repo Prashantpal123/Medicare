@@ -46,10 +46,11 @@ const Login = () => {
       });
       console.log(result,"Login data")
         
-      
+    
 
       toast.success(result.message);
       navigate("/home"); // Redirect to home on success
+      window.location.reload(); 
     } catch (error) {
      
       toast.error(error.message);
