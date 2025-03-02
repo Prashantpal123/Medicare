@@ -126,7 +126,7 @@ className='w-full px-4 py-3 border-b border-solid
                     <option value="doctor">Doctor</option> </select> </label>
   <label className='text-slate-900 font-bold text-[16px]   leadin-7'>   Gender <select name="gender" id="
               "    value={formData.gender}  onChange={handleInputChange}  className='text-gray-600 font-semibold text-[15px]  leading-7 px-4
-              py-3 focus:outline-none'> <option value="Male">Male</option> <option value="Doctor">Female</option> </select> </label> </div>
+              py-3 focus:outline-none'> <option value="Male">Male</option> <option value="Female">Female</option> </select> </label> </div>
  <div className='mb-5 flex items-center gap-3'>  { selectedfile &&    <figure className='w-[50px] h-[50px]  rounded-full border-2 border-solid border-sky-600 flex items-center justify-center'>
                <img className='w-[50px] h-[50px] rounded-full' src={previewUrl} alt="" /> </figure>}
                 <div className='relative w-[120px] h-[40px]'> <input  type="file"

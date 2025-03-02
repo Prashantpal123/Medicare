@@ -22,6 +22,7 @@ const requests = [
 
 
 
+
 const Main_dash =() => {
 
 const {dispatch,user}= useContext(authContext)
@@ -29,12 +30,15 @@ const doctorId = user?.id;
 
 
   const [selectedPatient, setSelectedPatient] = useState(null);
+  const [selectedrequest, setselectedrequest] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleConfirmClick = (patient) => {
     setSelectedPatient(patient);
     setIsModalOpen(true);
   };
+
+  
  
 
 // Pass the API URL to the hook
@@ -134,7 +138,7 @@ const doctorId = user?.id;
             />
             <div className="flex-1 text-center sm:text-left">
               <p className="font-medium text-gray-800">{req.name}</p>
-              <p className="text-gray-500">{req.doctorId}</p>
+              <p className="text-gray-500">{req.status}</p>
             </div>
             <div className="flex sm:flex-col sm:space-y-2 space-x-2 sm:space-x-0 w-full sm:w-auto justify-center">
               <button  onClick={() => handleConfirmClick(req)} className="bg-green-500 text-white py-1 px-3 rounded-md font-medium hover:bg-green-600 transition w-full sm:w-auto">Confirm</button>
@@ -149,7 +153,7 @@ const doctorId = user?.id;
  <ConfirmAppointmentModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-       
+       request={selectedrequest}
         patient={selectedPatient}
       />
 

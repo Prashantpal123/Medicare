@@ -90,6 +90,7 @@ const Footer = () => {
               
                   <Link
                     to={item.path}
+                    key={index}
                     className='flex w- h-12  
                     item center justify-center
                      '> <div className='h'>{item.icon}</div></Link>

@@ -44,8 +44,7 @@ const SidePanel = () => {
             body: JSON.stringify({
               doctorId: doctor._id,
               userId: user._id, // Logged-in user's ID
-              date: "2025-02-28", // Replace with actual selected date
-              time: "10:00 AM", // Replace with actual selected time
+              // Replace with actual selected time
             }),
           });
     

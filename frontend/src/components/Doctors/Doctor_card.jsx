@@ -18,8 +18,8 @@ const {name,avgRating,totalRating,photo,specialization,totalPatients,hospital,}=
 
   return (<>
     <div className='p-3 lg:p-5 '>
-       <div>
-        <img src={photo} alt="" className='' />
+       <div className=''>
+        <img src={photo} alt="" className=' object-cover ' />
        </div>
        <h2 className='text-[18px] leading-[30px] lg:text-[20px] lg:leading-9 font-[700] mt-3  '>{name}</h2>
         <div className='  flex items-center justify-between'>

@@ -60,17 +60,67 @@ export const getPendingBookingsForDoctor = async (req, res) => {
     const pendingBookings = await Booking.find({ doctorId: doctorId, status: "pending" })
     for (let booking of pendingBookings) {
       if (booking.userId) { // Check if userId is not null
-        const user = await Doctor.findById(booking.userId).select("name photo");
+        const user = await Doctor.findById(booking.userId).select("name photo age ");
         if (user) {
           booking._doc.name = user.name; // Attach user's name
           booking._doc.photo = user.photo; 
+          booking._doc.age = user.age;
         }
         else {
-          const user = await User.findById(booking.userId).select("name photo");
+          const user = await User.findById(booking.userId).select("name photo  age ");
           if (user) {
 
             booking._doc.name = user.name; // Attach user's name
             booking._doc.photo = user.photo; 
+            booking._doc.age = user.age;
+          }
+          else {
+            console.log(`User not found for ID: ${booking.userId}`);
+            booking._doc.name = "Unknown";
+            booking._doc.photo = null;
+            
+          }
+        }
+
+      } else {
+        console.log(`Booking ${booking._id} has null userId`);
+        booking._doc.name = "Unknown";
+      }
+    }
+    res.status(200).json(pendingBookings);
+  } catch (error) {
+    console.error("Error fetching pending bookings:", error.message);
+    res.status(500).json({ error: "Server error. Please try again." });
+  }
+};
+
+
+
+export const getapprovedBookingsForDoctor = async (req, res) => {
+  try {
+    const doctorId = req.userId; // Get doctor ID from logged-in user
+
+    if (!doctorId) {
+      return res.status(400).json({ error: "Doctor ID is required." });
+    }
+
+    // ✅ Fetch only pending bookings for this doctor
+    const approvedBookings = await Booking.find({ doctorId: doctorId, status: "Approved" })
+    for (let booking of approvedBookings) {
+      if (booking.userId) { // Check if userId is not null
+        const user = await Doctor.findById(booking.userId).select("name photo age");
+        if (user) {
+          booking._doc.name = user.name; // Attach user's name
+          booking._doc.photo = user.photo; 
+          booking._doc.age = user.age;
+        }
+        else {
+          const user = await User.findById(booking.userId).select("name photo age");
+          if (user) {
+
+            booking._doc.name = user.name; // Attach user's name
+            booking._doc.photo = user.photo;
+            booking._doc.age = user.age; 
           }
           else {
             console.log(`User not found for ID: ${booking.userId}`);
@@ -84,15 +134,21 @@ export const getPendingBookingsForDoctor = async (req, res) => {
         booking._doc.name = "Unknown";
       }
     }
-
-
-
-    res.status(200).json(pendingBookings);
+    res.status(200).json(approvedBookings);
   } catch (error) {
     console.error("Error fetching pending bookings:", error.message);
     res.status(500).json({ error: "Server error. Please try again." });
   }
 };
+
+
+
+
+
+
+
+
+
 
 
 export const checkBookingStatus = async (req, res) => {
@@ -141,11 +197,12 @@ export const getBookingById = async (req, res) => {
 
 // Update booking status
 export const updateBookingStatus = async (req, res) => {
+  const {id}=req.params;
   try {
-    const { status, isPaid } = req.body;
+    const { status,date,time,notes,Fees } = req.body;
     const updatedBooking = await Booking.findByIdAndUpdate(
-      req.params.id,
-      { status, isPaid },
+      id,
+      { status,date,time,notes,ticketPrice:Fees, },
       { new: true }
     );
 

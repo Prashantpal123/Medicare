@@ -1,7 +1,7 @@
 import React from 'react'
 import { BASE_URL } from '../../config'
 import Doctor_card from './../../components/Doctors/Doctor_card'
-import {doctors} from './../../assets/data/Doctor'
+
 import { useState } from 'react'
 import { useEffect } from 'react'
 import useFetchData from '../../Hooks/usefetchData'
