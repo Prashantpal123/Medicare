@@ -1,54 +1,60 @@
-import React from 'react'
+import React from 'react';
 
 const Contact = () => {
   return (
-  <section>
-    <div className='px-4 mx-auto max-w-screen-md '>
-      <h2 className='text-center font-bold mt-4 text-[20px] md:text-[30px]'>Contact us 
-      
+    <section className="min-h-screen mt-3 flex items-center justify-center bg-gradient-to-b from-blue-50 to-white py-12 px-6">
+      <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8 animate-fade-in">
+        {/* Title Section */}
+        <h2 className="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
+        <p className="text-gray-600 text-center mt-2">
+          Got a technical issue? Want to send feedback about a beta feature?
+        </p>
 
-      </h2>
-      <p className='md:mb-8  font-light text-center text-gray-600'>
-        Got a technical issue? want to send feedback about a beta feature
+        {/* Form */}
+        <form action="#" className="space-y-6 mt-6">
+          {/* Email Field */}
+          <div>
+            <label htmlFor="email" className="block text-gray-700 font-semibold">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@gmail.com"
+              className="w-full mt-1 px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all"
+            />
+          </div>
 
+          {/* Subject Field */}
+          <div>
+            <label htmlFor="subject" className="block text-gray-700 font-semibold">Your Subject</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Let us know how we can help you"
+              className="w-full mt-1 px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all"
+            />
+          </div>
 
-      </p>
-      <form action="#" className='md:space-y-8 space-y-3'>
-      <div>
-          <label htmlFor="email" className='form_label'>
-            Your Email
-          </label>
-          <input type="email" id='email' placeholder='example@gmail.com' 
-          className='form_input mt-1 border'/>
-        </div>
+          {/* Message Field */}
+          <div>
+            <label htmlFor="message" className="block text-gray-700 font-semibold">Your Message</label>
+            <textarea
+              id="message"
+              placeholder="Leave a comment..."
+              rows="6"
+              className="w-full mt-1 px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all"
+            />
+          </div>
 
-        <div>
-          <label htmlFor="subject" className='form_label'>
-            Your Subject
-          </label>
-          <input type="text" id='subject' placeholder='let us know how we can help you' 
-          className='form_input mt-1 border'/>
-        </div>
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button className="bg-red-600 hover:bg-red-700 text-white text-lg px-10 py-3 rounded-full font-semibold shadow-md transition-transform hover:scale-105">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+};
 
-
-        <div className='sm:col-span-2'>
-          <label htmlFor="message" className='form_label'>
-            Your Message
-          </label>
-          <textarea type="text" id='message' placeholder='leave a comment......'
-          rows="6"
-          className='form_input mt-1 border'/>
-        </div>
-        <div className='flex justify-center md:mt-8'>
-                <button className='bg-red-600 hover:bg-red-700 text-white text-[15px] py-1 md:text-[20px] md:px-40 
-          px-32 rounded-[10px] font-[600]'>Submit</button>
-              </div>
-
-      </form>
-
-    </div>
-  </section>
-  )
-}
-
-export default Contact
+export default Contact;

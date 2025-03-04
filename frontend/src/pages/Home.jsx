@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
 
-      <div className='hero_container   flex flex-col lg:flex-row  lg:justify-center gap-4 lg:gap-16 '>
+      <div className='hero_container  mt-12  flex flex-col lg:flex-row  lg:justify-center gap-4 lg:gap-16 '>
 
 
 

@@ -26,7 +26,12 @@ const DoctorSchema = new mongoose.Schema({
   about: { type: String ,
     default:"it is good doctor"
   },
-  timeSlots: { type: Array },
+  timeSlots: [   {
+    date:{ type: String,},
+    day: { type: String, enum: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] },
+    startTime: { type: String }, // Example: "10:00 AM"
+    endTime: { type: String } // Example: "4:30 PM"
+  } ],
   reviews: [{ type: mongoose.Types.ObjectId, ref: "Review" }],
   averageRating: {
     type: Number,

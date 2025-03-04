@@ -1,16 +1,13 @@
 import React from 'react';
 import useFetchData from '../../Hooks/usefetchData';
 import { BASE_URL } from '../../config';
-const appointments = [
-  { id: 1, patient: "GreatStack", payment: "CASH", age: 24, dateTime: "23 Aug 2024, 11:00 AM", fees: "$40" },
-  { id: 2, patient: "GreatStack", payment: "CASH", age: 24, dateTime: "25 Aug 2024, 02:00 PM", fees: "$40" },
-];
+
 
 const Appointments = () => {
 
 
 
-  const { data, loading, error, refetch } =  useFetchData(`${BASE_URL}/api/v1/bookings/approved`);
+  const { data, loading, error,  } =  useFetchData(`${BASE_URL}/api/v1/bookings/approved`);
    
     
   if (loading) return <div>Loading...</div>; // Show loading message while fetching
@@ -19,7 +16,7 @@ const Appointments = () => {
  let bookings=data;
   return (
     <div className="p-4 md:p-6 bg-white shadow-lg rounded-xl borde  mx-3">
-      <h2 className="text-xl font-bold text-center text-gray-800 mb-4">Upcoming Appointments</h2>
+      <h2 className="text-xl font-bold text-center text-gray-800 mb-4">MY Appointments</h2>
       <div className="block  lg:hidden">
         {bookings.map((a) => (
           <div key={a} className="bg-gray-100 p-4 mb-3 mx-3 rounded-lg shadow-md">
@@ -38,10 +35,10 @@ const Appointments = () => {
               <p><strong>Fees:</strong> {a.ticketPrice}</p>
               <div className="flex space-x-2">
                 <button className="bg-red-500 hover:bg-red-600 text-white font-bold px-3 py-2 rounded-xl shadow-md transition duration-300 text-sm">
-                   Decline
+                  
                 </button>
                 <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-2 rounded-xl shadow-md transition duration-300 text-sm">
-                   Confirm
+              Done
                 </button>
               </div>
             </div>
@@ -78,7 +75,7 @@ const Appointments = () => {
                     Decline
                   </button>
                   <button className="bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-1 md:px-4 md:py-2 rounded-lg shadow-md transition duration-300 text-sm">
-                    Confirm
+                 Done
                   </button>
                 </td>
               </tr>

@@ -1,28 +1,34 @@
 import User from '../models/UserSchema.js'
 import Booking from "../models/BookingSchema.js"
 import Doctor from '../models/DoctorSchema.js';
+import jwt from "jsonwebtoken"
+import bcrypt from "bcryptjs"
+
+const generateToken=user=>{
+   return jwt.sign({id:user._id,role:user.role},process.env.JWT_SECRET_KEY)
+}
 
 export const updateUser = async (req, res) => {
-    const id = req.params.id; 
+    const { id } = req.params;
+    const updates = { ...req.body };
+  
     try {
-
-        const updatedUser = await User.findByIdAndUpdate(
-            id,
-            { $set: req.body },
-            { new: true })
-        res.status(200)
-            .json(
-                {
-                    success: true,
-                    message: "user Successfully updated",
-                    data: updatedUser
-                })
-
+      if (updates.password) {
+        const salt = await bcrypt.genSalt(10);
+        updates.password = await bcrypt.hash(updates.password, salt);
+      }
+  
+      const updatedUser = await User.findByIdAndUpdate(id, { $set: updates }, { new: true });
+  
+      res.status(200).json({
+        success: true,
+        message: 'User successfully updated',
+        data: updatedUser,
+      });
     } catch (error) {
-        res.status(500).json({ success: false, message: "failed to update" })
-
+      res.status(500).json({ success: false, message: 'Failed to update user' });
     }
-}
+  };
 
 export const DeleteUser = async (req, res) => {
     const id = req.params.id

@@ -5,7 +5,7 @@ import { BASE_URL } from '../../config';
 import uploadImageToCloudinary from '../../../utils/uploadCloudinary';
 import { authContext } from '../../context/Authcontext';
 
-const Profile = () => {
+const DoctorProfileUPdate = () => {
   const { dispatch,user,token } = useContext(authContext);
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +16,7 @@ const Profile = () => {
     role: 'patient',
     bloodType: '',
     age: '',
+    TicketPrice:''
   });
   const [previewSrc, setPreviewSrc] = useState(null);
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ const Profile = () => {
         role: user.role || 'patient',
         bloodType: user.bloodType || '',
         age: user.age || '',
+        TicketPrice:user.TicketPrice || ''
+        
       });
       setPreviewSrc(user.photo || null);
     }
@@ -125,10 +128,55 @@ const Profile = () => {
         </div>
         <div className='mb-5'>
           <input
+            type='number'
+            placeholder='Enter Your TicketPrice'
+            name='TicketPrice'
+            value={formData.TicketPrice}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+        <div className='mb-5'>
+          <input
             type='text'
             placeholder='Blood Type'
             name='bloodType'
             value={formData.bloodType}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+        <div className='mb-5'>
+          <input
+            type='text'
+            placeholder='Enter Your Specialization'
+            name='specialization'
+            value={formData.specialization}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+        <div className='mb-5'>
+          <input
+            type='text'
+            placeholder='bio'
+            name='bio'
+            value={formData.bio}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+        <div className='mb-5'>
+          <textarea
+            rows={5}
+            type='text'
+            placeholder='Enter a Paragraph About Yourself'
+            name='bloodType'
+            value={formData.about}
             required
             onChange={handleInputChange}
             className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
@@ -196,4 +244,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default DoctorProfileUPdate

@@ -123,3 +123,45 @@ export const getDoctorProfile = async (req, res) => {
       res.status(500).json({ success: false, message: 'Something went wrong' });
     }
   };
+
+
+export const getSlot = async (req,res) => {
+    try {
+        const id = req.params.id; 
+     const doctor= await   Doctor.findById(id);
+     res.status(200)
+     .json(
+         {
+             success: true,
+             message:  "doctor Successfully found",
+             data: doctor.timeSlots
+         });
+        
+    } catch (error) {
+        res.status(400).json({error:"server error"})
+        
+    }
+    
+}
+
+ export const addTimeSlot = async (req,res) => {
+
+    try {
+        const { date, startTime, endTime,day } = req.body;
+        const doctor = await Doctor.findById(req.params.id);
+        console.log(req.body);
+        
+        if (!doctor) {
+          return res.status(404).json({ message: "Doctor not found" });
+        }
+  
+        // Push new time slot into the array
+        const newslot=doctor.timeSlots.push({ date, startTime, endTime,day });
+        await doctor.save();
+    
+        res.status(201).json({ message: "Time slot added successfully",newslot});
+      } catch (error) {
+        res.status(500).json({ error: "Server error" });
+      }
+    
+  }

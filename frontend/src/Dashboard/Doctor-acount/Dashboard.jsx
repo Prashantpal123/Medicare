@@ -3,6 +3,7 @@ import Main_dash from "./Main-dash";
 import Appointments from "./Appointments";
 import MainDash from "./Main-dash";
 import { authContext } from "../../context/Authcontext";
+import Profile from "./Profile";
 
 const Dashboard = () => {
    const {dispatch,user}= useContext(authContext)
@@ -50,13 +51,13 @@ const Dashboard = () => {
           )}
 
           {activePage === "Dashboard" && (
-            <div>  <MainDash/> </div>
+            <div>  <MainDash setActivePage={setActivePage}/> </div>
            
  
           )}
 
           {activePage === "Profile" && (
-            <p className="text-gray-700">This is your profile page. You can update your details here.</p>
+           <Profile/>
           )}
         </div>
       </div>

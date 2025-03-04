@@ -8,7 +8,8 @@ import useFetchData from '../../Hooks/useFetchData'
 import { BASE_URL } from '../../config'
 
 const MyAcount = () => {
-  const {dispatch}= useContext(authContext)
+  const {dispatch,user}= useContext(authContext)
+  console.log(user)
   const [tab, settab] = useState("bookings")
   const {data:userData,loading,error}=useFetchData(`${BASE_URL}/users/profile/me`);
   console.log(userData,"userdata");
@@ -24,7 +25,7 @@ const MyAcount = () => {
         <div className="flex items-center justify-center">
           <figure className="w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor">
             <img
-              src={userImg}
+              src={user.photo}
               alt=""
               className="w-full h-full rounded-full"
             />
@@ -33,19 +34,26 @@ const MyAcount = () => {
   
         <div className="text-center mt-4">
           <h3 className="text-[18px] leading-[30px] text-headingColor font-bold">
-            Muhibur Rahman
+            {user.name}
           </h3>
           <p className="text-textColor text-[15px] leading-6 font-medium">
-            example@gmail.com
+          {user.email}
           </p>
           <p className="text-textColor text-[15px] leading-6 font-medium">
-           Blood Type: <span className='ml-2 text-slate-900 text-[22px] leading-8'> o-</span>
+           Blood Type: <span className='ml-2 text-slate-900 text-[22px] leading-8'>{user.bloodType}</span>
           </p>
         </div>
-          <div className='mt-[50px] md:mt-[100px]'>
-             <button onClick={handleLogout} className='w-full bg-[#181A1E] p-3 
+        <div className='flex w-full justify-center'>
+        <div className='w-full  bg-[#5788eb]  text-center max-w-[150px] p-3 
+             text-[16px] leading-7 rounded-md text-white max-h-[50px]'>
+        Age :  <span className='mx-2'> {user.age} Years</span>
+          </div>
+        </div>
+          
+          <div className='mt-3'>
+             <button onClick={handleLogout} className='w-full hover:bg-red-700 bg-red-600  p-3 
              text-[16px] leading-7 rounded-md text-white'>Logout</button>
-               <button className='w-full bg-red-600 p-3 mt-3
+               <button className='w-full p-3 hover:bg-black bg-[#181A1E] mt-3
              text-[16px] leading-7 rounded-md text-white'>Delete Acount</button>
           </div>
 

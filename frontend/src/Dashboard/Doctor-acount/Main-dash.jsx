@@ -6,6 +6,7 @@ import { BASE_URL } from '../../config';
 import ConfirmAppointmentModal from './ConfirmationAppointment';
 import { authContext } from '../../context/Authcontext';
 import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const requests = [
     { name: "Maria Sarafat", issue: "Cold", avatar: "https://via.placeholder.com/40" },
@@ -23,7 +24,7 @@ const requests = [
 
 
 
-const Main_dash =() => {
+const Main_dash =({setActivePage}) => {
 
 const {dispatch,user}= useContext(authContext)
 const doctorId = user?.id;
@@ -120,7 +121,8 @@ const doctorId = user?.id;
           </li>
         ))}
       </ul>
-      <button className="mt-6 w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-600 transition">See All</button>
+      
+      <button onClick={() => setActivePage("Appointments")}  className="mt-6 w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-600 transition">See All</button>
     
     </div>
 
@@ -147,7 +149,7 @@ const doctorId = user?.id;
           </div>
         ))}
       </div>
-      <button className="mt-6 w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-600 transition">See All</button>
+     
     </div>
  {/* Modal */}
  <ConfirmAppointmentModal

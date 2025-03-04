@@ -1,7 +1,7 @@
 import React from 'react'
 import { formateDate } from '../../../utils/formateDate'
 
-const Doctor_about = ({doctor}) => {
+const MyDetails = ({user}) => {
   return (
     <div>
       <div>
@@ -10,7 +10,7 @@ const Doctor_about = ({doctor}) => {
           About of
           <span className='text-sky-400 font-bold
          text-[24px] leading-9'>
-            {doctor.name}
+        {user.name}
 
           </span>
         </h3>
@@ -115,4 +115,4 @@ const Doctor_about = ({doctor}) => {
   )
 }
 
-export default Doctor_about
+export default MyDetails
