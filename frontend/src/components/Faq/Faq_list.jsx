@@ -1,14 +1,22 @@
-import React from 'react'
-import {faqs} from "../../assets/data/faqs"
-import Faq_item from './Faq_item'
+import React from "react";
+import { faqs } from "../../assets/data/faqs";
+import FaqItem from "./Faq_item";
 
-const Faq_list = () => {
+const FaqList = () => {
   return (
-    <ul className='mt-[38px] '>
-        {faqs.map((item, index)=>(<Faq_item item={item} key={index}/>))}
+    <section className="bg-gray-100 py-4 px-5 rounded-lg shadow-sm">
+      <div className="max-w-3xl mx-auto">
+       
 
-    </ul>
-  )
-}
+        {/* FAQ Items */}
+        <ul className="space-y-3">
+          {faqs.map((item, index) => (
+            <FaqItem item={item} key={index} />
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+};
 
-export default Faq_list
+export default FaqList;

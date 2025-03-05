@@ -12,7 +12,7 @@ const Dashboard = () => {
       dispatch({type:"LOGOUT"})
     }
   return (
-    <div className="md:flex  bg-gray-100">
+    <div className="md:flex mt-12 bg-gray-100">
       {/* Sidebar */}
       <div className=" flex md:flex-col md:w-1/5 w-full  bg-white shadow-md md:p-5">
         <h2 className="text-xl hidden md:block font-bold text-blue-600">{user.name}</h2>

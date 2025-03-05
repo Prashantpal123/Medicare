@@ -15,7 +15,7 @@ const Doctors = () => {
   );
 
   return (
-    <div className='doctor_container mt-3 flex justify-center bg-gradient-to-b from-blue-100 to-white min-h-screen pt-10 w-full'>
+    <div className='doctor_container mt-3 flex justify-center bg-gradient-to-b from-blue-50 to-white min-h-screen pt-10 w-full'>
       <div className='max-w-[1100px] w-full px-6'>
         {/* Page Title */}
         <div className='text-center flex flex-col items-center'>

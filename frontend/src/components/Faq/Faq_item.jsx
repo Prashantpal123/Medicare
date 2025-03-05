@@ -1,39 +1,42 @@
-import React from 'react'
-import { useState } from 'react'
-import { AiOutlineMinus } from "react-icons/ai";
-import { AiOutlinePlus } from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-const Faq_item = ({item}) => {
- 
-    const [isOpen, setisOpen] = useState(false);
+const FaqItem = ({ item }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleopen= ()=>{
-        setisOpen(!isOpen)
-    }
-
+  const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <div className='p-3  rounded-[12px] border border-solid 
-    border-[#D9DeC2] mb-5 cursor-pointer  '>
-      <div className='flex items-center justify-between gap-5' onClick={toggleopen}>
-        <h4 className='text-[16px] leading-7   text-gray-900'>
-            {item.question}
-        </h4>
-        <div className={`${isOpen && "text-white border none"}
-         w-7 h7  border border-solid border-[#141F21] rounded flex items-center justify-center`}>
-            {isOpen ?<AiOutlineMinus className='text-black' />:<AiOutlinePlus />}
-
+    <div
+      className="p-2 rounded-lg border border-gray-300 bg-white shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer"
+    >
+      {/* Question Section */}
+      <div
+        className="flex items-center justify-between gap-5"
+        onClick={toggleOpen}
+      >
+        <h4 className="text-lg font-semibold text-gray-900">{item.question}</h4>
+        <div
+          className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 ${
+            isOpen ? "bg-sky-700 text-white" : "bg-gray-200 text-gray-800"
+          }`}
+        >
+          {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </div>
       </div>
-       {isOpen && <div className=''>
-        <p className='text-[14px] leading-6 lg:text-[16px]  font-[400] text-gray-600'>{item.content}</p>
-       </div> }
 
-
+      {/* Answer Section (Collapsible) */}
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? " max-h-60 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="text-gray-700 text-[15px] leading-6">
+          {item.content}
+        </p>
+      </div>
     </div>
+  );
+};
 
-
-  )
-}
-
-export default Faq_item
+export default FaqItem;

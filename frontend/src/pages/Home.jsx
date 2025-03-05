@@ -81,7 +81,7 @@ const Home = () => {
 
 
       {/*process container&*/}
-      <div className='flex justify-center'>
+      <div className='flex justify-center bg-gradient-to-b from-blue-50 to-white '>
       <div className='process_container md:max-w-[1100px] flex mt-12 md:mt-24 flex-col  mx-6  '>
         <div className='md:text-center w-full '>
           <div className='md:flex md:justify-center'>
@@ -157,7 +157,7 @@ const Home = () => {
 
       {/*service section start*/}
      
-      <div classname="service_container md:mt-24  ">
+      <div classname="service_container md:mt-24 bg-gradient-to-b from-blue-50 to-white  ">
 
       <div className='mt-8 md:mt-24'>
   <h1 className='font-[700] leading-8 text-[30px] text-center'> Our Medical services</h1>
@@ -222,12 +222,15 @@ const Home = () => {
         </div>
 
 
-      </div>
+      </div> 
+
+
+
 
       {/*our doctors section*/}
 
       <section className="doctor_section flex justify-center  ">
-      <div className='max-w-[1100px] '>
+      <div className='max-w-[1500px] '>
         <div className='mt-8 md:mt-12 '>
           <h1 className='font-[700] leading-8 text-[30px] text-center'> Our Great Doctors</h1>
 
@@ -245,27 +248,29 @@ const Home = () => {
       </section>
 
 {/*  faq section */}
-<section>
-<div className=' flex justify-center mt-10 md:mt-18'>
+<section className="bg-gray-50 py-12 px- rounded-lg shadow-md">
+  <div className="flex justify-center">
+    <div className="flex flex-col lg:flex-row gap-48 max-w-[1100px] w-full">
+      {/* Left Side Image - Hidden on Small Screens */}
+      <div className="hidden mt-10   md:block flex-shrink-0">
+        <img
+          src={FaqListImg}
+          alt="FAQ Illustration"
+          className="max-w-sm h-[450px] rounded-lg shadow-lg"
+        />
+      </div>
 
-<div className='flex gap-[50px] lg:gap- max-w-[1100px] justify-center'>
-  <div className=' hidden md:block '>
-  <img src={FaqListImg} alt="img" /></div>
-
-
-
-  <div className='w-full  mx-3'>
-  <h2 className=' font-[700] text-[20px] md:text-[35px] md:leading-none '>Most questions by our beloved patients : </h2>
-  <Faq_list className="" />
+      {/* Right Side - FAQ Section */}
+      <div className="w-full">
+        <h2 className="font-bold px-2 text-xl md:text-4xl text-gray-900 leading-tight mb-1">
+          Most Questions by Our Beloved Patients:
+        </h2>
+        <Faq_list />
+      </div>
     </div>
-
-</div>
-
-
-</div>
-
-
+  </div>
 </section>
+
 
 
 

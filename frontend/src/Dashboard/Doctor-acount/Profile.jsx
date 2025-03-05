@@ -1,94 +1,75 @@
-
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
-import { BASE_URL } from '../../config';
-import uploadImageToCloudinary from '../../../utils/uploadCloudinary';
 import { authContext } from '../../context/Authcontext';
 import Doctor_about from '../../pages/Doctors/Doctor_about';
 import MyDetails from './MyDetails';
 import DoctorProfileUPdate from './UpdateDoctorProfile';
-import SetTimeSlot from './SetTimeSlot'
+import SetTimeSlot from './SetTimeSlot';
+import { FiLogOut, FiUserCheck, FiEdit3 } from 'react-icons/fi';
+import { MdDelete } from 'react-icons/md';
+
 const Profile = () => {
-      const { dispatch,user,token } = useContext(authContext);
-      const handleLogout=()=>{
-        dispatch({type:"LOGOUT"})
-    
-      };
-       const [tab, settab] = useState("about")
+  const { dispatch, user } = useContext(authContext);
+  const [tab, setTab] = useState('about');
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+    toast.success('Logged out successfully!');
+  };
+
   return (
-    <section>
-          <div className="w-full px-5 mx-auto">
-    <div className="grid grid-cols-1 xl:grid-cols-3  gap-10 ">
-      <div className="pb-[50pxh] flex justify-between xl:justify-start gap-10 lg:gap-10  md:gap-20 lg:g lg:justify-between flex-col md:flex-row    xl:flex-col  px-[3pxmm] mt-4 rounded-md">
-      
-  
-       
-        
-          <div>
+    <section className="min-h-screen bg-gradient-to-b from-blue-100 to-white px-6 py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-12">
 
-
-          <div className="flex items-center justify-center">
-          <figure className="w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor">
-            <img
-              src={user.photo}
-              alt=""
-              className="w-full h-full rounded-full"
-            />
+        {/* Left Sidebar */}
+        <div className="bg-white shadow-xl p-6 rounded-xl flex flex-col items-center border">
+          <figure className="w-32 h-32 rounded-full border-4 border-blue-500 overflow-hidden">
+            <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
           </figure>
-        </div>
-          <div className="text-center mt-4">
-          <h3 className="text-[18px] leading-[30px] text-headingColor font-bold">
-            {user.name}
-          </h3>
-          <p className="text-textColor text-[15px] leading-6 font-medium">
-          {user.email}
+          <h3 className="text-xl font-bold text-gray-800 mt-4">{user.name}</h3>
+          <p className="text-gray-600">{user.email}</p>
+          <p className="text-gray-700 mt-2">
+            Blood Type: <span className="text-lg font-semibold text-red-600">{user.bloodType}</span>
           </p>
-          <p className="text-textColor text-[15px] leading-6 font-medium">
-           Blood Type: <span className='ml-2 text-slate-900 text-[22px] leading-8'>{user.bloodType}</span>
-          </p>
-        </div>
-        <div className='mt-3'>
-             <button onClick={handleLogout} className='w-full min-w-[145px] hover:bg-red-700 bg-red-600  p-3 
-             text-[16px] leading-7 rounded-md text-white'>Logout</button>
-               <button className='w-full p-3 min-w-[145px] hover:bg-black bg-[#181A1E] mt-3
-             text-[16px] leading-7 rounded-md text-white'>Delete Acount</button>
-          </div>
-          </div>
-        
 
-         <div className='flex w-full justify-center md:justify-end' >
-          <SetTimeSlot className=' shadow-3xl border rounded-md mt-4 '/>
-         </div>
-           
-        
+          <div className="w-full mt-6 flex flex-col gap-3">
+            <button onClick={handleLogout} className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-md font-semibold transition">
+              <FiLogOut className="text-lg" /> Logout
+            </button>
+            <button className="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-4 py-3 rounded-md font-semibold transition">
+              <MdDelete className="text-lg" /> Delete Account
+            </button>
+          </div>
+
+          {/* Time Slot Component */}
+          <div className="w-full mt-6">
+            <SetTimeSlot className="w-full shadow-md border rounded-lg" />
+          </div>
+        </div>
+
+        {/* Right Section */}
+        <div className="xl:col-span-2 bg-white shadow-lg p-8 rounded-xl border">
+          {/* Tab Buttons */}
+          <div className="flex gap-4 border-b pb-4">
+            <button onClick={() => setTab('about')} className={`flex items-center gap-2 px-5 py-2 rounded-md font-semibold transition ${tab === 'about' ? 'bg-blue-600 text-white' : 'text-gray-700 border border-blue-500 hover:bg-blue-100'}`}>
+              <FiUserCheck /> My Details
+            </button>
+            <button onClick={() => setTab('update')} className={`flex items-center gap-2 px-5 py-2 rounded-md font-semibold transition ${tab === 'update' ? 'bg-green-600 text-white' : 'text-gray-700 border border-green-500 hover:bg-green-100'}`}>
+              <FiEdit3 /> Update Profile
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="mt-6">
+            {tab === 'about' && <MyDetails user={user} />}
+            {tab === 'update' && <DoctorProfileUPdate />}
+          </div>
+        </div>
 
       </div>
-       
-      <div className="md:col-span-2 xl:px-[30px]">
-  <div>
-    <button onClick={()=> settab('about')} className={`${tab=='about' && 'bg-sky-600 text-white'} p-2 mr-5 px-5 rounded-md text-headingColor font-semibold text-[16px] leading-7 border border-solid border-sky-500`}>
-    My Details
-    </button>
-
-    <button  onClick={()=> settab('update')}  className={` ${tab=='update' && 'bg-green-600 text-white'} py-2 px-5 rounded-md text-headingColor font-semibold text-[16px] leading-7 border border-solid border-sky-500`}>
-   Update Profile
-    </button>
-  </div>
-  <div className='mt-4'>
-  {tab=="about" &&  <MyDetails user={user}/> }
-  {tab=="update" && <DoctorProfileUPdate/> }
-  </div>
-
-
-</div>
-
-
-
-    </div>
-  </div>
     </section>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
+

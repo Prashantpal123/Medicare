@@ -1,199 +1,42 @@
-import React from 'react'
-import { BsArrowRightCircle } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { BsArrowRightCircle } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
-const Service_card = () => {
-    return (
+const services = [
+  { id: 1, title: 'Cancer Care', color: 'bg-pink-500' },
+  { id: 2, title: 'Labor & Delivery', color: 'bg-slate-400' },
+  { id: 3, title: 'Pediatric Care', color: 'bg-yellow-400' },
+  { id: 4, title: 'Cardiology', color: 'bg-green-500' },
+  { id: 5, title: 'Neurology', color: 'bg-red-500' },
+  { id: 6, title: 'Orthopedics', color: 'bg-purple-500' },
+];
 
-        <>
-            <div className=' flex flex-col sm:flex-row items-center gap-7 justify-center md:gap-48'>
-                <div className='max-w-64 mx-2 '>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Cancer Care</h1>
-                    </div>
-
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-pink-500 rounded-full px-3'>1</p>
-                        </div>
-
-
-                    </div>
-
-
+const ServiceCard = () => {
+  return (
+    <section className="py-12 bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+          {services.map((service) => (
+            <div key={service.id} className="relative bg-white shadow-lg rounded-xl p-6 border border-gray-200 transition-transform hover:scale-105">
+              <h2 className="text-xl font-bold text-gray-800">{service.title}</h2>
+              <p className="text-gray-600 mt-2">
+                World-class care for everyone. Our health system offers unmatched expert health care.
+              </p>
+              <div className="flex items-center justify-between mt-5">
+                <Link to="/doctors" className="flex items-center text-gray-700 hover:text-blue-600 transition">
+                  <BsArrowRightCircle className="text-4xl" />
+                </Link>
+                <div className={`w-10 h-10 flex items-center justify-center rounded-full ${service.color} text-white font-bold text-lg`}>
+                  {service.id}
                 </div>
-
-                <div className='max-w-64 mx-2'>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Labor & Delivery</h1>
-                    </div>
-
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-slate-400 rounded-full px-3'>2</p>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-                <div className='max-w-64 mx-2'>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Cancer Care</h1>
-                    </div>
-
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-yellow-400 rounded-full px-3'>3</p>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-
-
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-            <div className=' flex flex-col sm:flex-row items-center gap-7 justify-center mt-3 md:mt-12 md:gap-48'>
-                <div className='max-w-64 mx-2 '>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Cancer Care</h1>
-                    </div>
+export default ServiceCard;
 
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-green-500 rounded-full px-3'>4</p>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-                <div className='max-w-64 mx-2'>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Cancer Care</h1>
-                    </div>
-
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-red-500 rounded-full px-3'>5</p>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-                <div className='max-w-64 mx-2'>
-                    <div className=''>
-                        <h1 className='font-[700] text-[25px]'>Cancer Care</h1>
-                    </div>
-
-                    <div className='text-[15px] mt-1'>
-                        <p>World-class care for everyone our
-                            health system offers unmatched expert health care </p>
-                    </div>
-
-                    <div className='flex mt-3 md:mt-6 justify-between '>
-                        <Link to="/doctors" className='flex justify-center '>
-
-                            <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-                        </Link>
-
-
-                        <div className='mr-3 '>
-                            <p className='font-[700] text-[30px] bg-purple-500 rounded-full px-3'>6</p>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-
-
-            </div>
-
-        </>
-    )
-}
-
-export default Service_card
