@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BASE_URL } from '../../config';
 import Doctor_card from './../../components/Doctors/Doctor_card';
-import useFetchData from '../../Hooks/usefetchData';
-
+import useFetchData from '../../Hooks/useFetchData';
+ 
 const Doctors = () => {
   const { data, loading, error } = useFetchData(`${BASE_URL}/api/v1/doctors/`);
   const [searchQuery, setSearchQuery] = useState('');
