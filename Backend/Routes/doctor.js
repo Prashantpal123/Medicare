@@ -1,5 +1,5 @@
 import express from "express"
-import { DeleteDoctor,getAllDoctor,getSingleDoctor,UpdateDoctor,getDoctorProfile, addTimeSlot, getSlot } from "../controllers/Doctorcontroller.js";
+import { DeleteDoctor,getAllDoctor,getSingleDoctor,UpdateDoctor,getDoctorProfile, addTimeSlot, getSlot } from "../controllers/doctorcontroller.js";
 import { authenticate,restrict } from "../auth/verifyToken.js";
 import reviewRoute from "../Routes/review.js"
 const router= express.Router()
