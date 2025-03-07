@@ -4,7 +4,7 @@ import avatar from "./../assets/avatar-icon.png"
 import { Link, useNavigate, useSubmit } from 'react-router-dom'
 import { useState } from 'react'
 
-import HashLoader from "react-spinners/HashLoader"
+
 
 
 import { BASE_URL } from "../config"
