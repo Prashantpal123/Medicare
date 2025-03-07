@@ -2,7 +2,7 @@ import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import { useState,useContext } from 'react'
 import { BASE_URL } from '../config'
-import { toast } from 'react-toastify'
+
 import  {authContext} from '../context/Authcontext.jsx'
 const Login = () => {
   const [formData, setformData] = useState({
@@ -48,12 +48,12 @@ const Login = () => {
         
     
 
-      toast.success(result.message);
+    
       navigate("/home"); // Redirect to home on success
       window.location.reload(); 
     } catch (error) {
      
-      toast.error(error.message);
+    
          setloading(false);
     }
 

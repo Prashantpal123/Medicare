@@ -71,11 +71,11 @@ const Signup = () => {
         throw new Error(message);
       }
 
-      toast.success(message);
+    
       navigate("/login"); // Redirect to login on success
     } catch (error) {
       console.error("Error in registration:", error);
-      toast.error(error.message || "Something went wrong. Please try again.");
+    
 
     }
   };
