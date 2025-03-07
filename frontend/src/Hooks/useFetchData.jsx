@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { token } from '../config';
 
-const useFetchData = (url) => {
+const UseFetchData = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,5 +39,5 @@ const useFetchData = (url) => {
   return { data, loading, error, refetch: fetchData }; // ✅ Return refetch function
 };
 
-export default useFetchData;
+export default UseFetchData;
 
