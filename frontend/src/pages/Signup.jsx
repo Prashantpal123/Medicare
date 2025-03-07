@@ -3,7 +3,7 @@ import signupImg from "../assets/signup.gif"
 import avatar from "./../assets/avatar-icon.png"
 import { Link, useNavigate, useSubmit } from 'react-router-dom'
 import { useState } from 'react'
-import { toast } from 'react-toastify'
+
 import HashLoader from "react-spinners/HashLoader"
 
 
