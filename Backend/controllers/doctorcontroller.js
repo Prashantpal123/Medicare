@@ -1,27 +1,26 @@
 import Booking from '../models/BookingSchema.js';
 import Doctor from '../models/DoctorSchema.js'
-export const UpdateDoctor = async (req, res) => {
-    const id = req.params.id; 
+export const UpdateDoctor = async (req,res) => {
+
     try {
-
-        const UpdatedDoctor = await Doctor.findByIdAndUpdate(
-            id,
-            { $set: req.body },
-            { new: true })
-        res.status(200)
-            .json(
-                {
-                    success: true,
-                    message:  "doctor Successfully updated",
-                    data: UpdatedDoctor
+        const { date, startTime, endTime,day } = req.body;
+        const doctor = await Doctor.findById(req.params.id);
+        console.log(req.body);
         
-                })
-
-    } catch (error) {
-        res.status(500).json({ success: false, message: "failed to update" })
-
-    }
-}
+        if (!doctor) {
+          return res.status(404).json({ message: "Doctor not found" });
+        }
+  
+        // Push new time slot into the array
+        const newslot=doctor.timeSlots.push({ date, startTime, endTime,day });
+        await doctor.save();
+    
+        res.status(201).json({ message: "Time slot added successfully",newslot});
+      } catch (error) {
+        res.status(500).json({ error: "Server error" });
+      }
+    
+  }
 
 export const DeleteDoctor = async (req, res) => {
     const id = req.params.id

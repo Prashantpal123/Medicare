@@ -14,13 +14,19 @@ const DoctorSchema = new mongoose.Schema({
 
   // Fields for doctors only
   specialization: { type: String },
-  qualifications: {
-    type: Array,
-  },
+  education: [   {
+    course:{ type: String,},
+   
+    college: { type: String }, // Example: "10:00 AM"
+    date: { type: String } // Example: "4:30 PM"
+  } ],
 
-  experiences: {
-    type: Array,
-  },
+  experience: [   {
+    date:{ type: String,},
+
+    role: { type: String }, // Example: "10:00 AM"
+    hospital: { type: String } // Example: "4:30 PM"
+  } ],
 
   bio: { type: String, maxLength: 50 },
   about: { type: String ,

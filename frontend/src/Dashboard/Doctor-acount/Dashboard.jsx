@@ -45,7 +45,7 @@ const Dashboard = () => {
         </div>
 
         {/* Dynamic Content */}
-        <div className="bg-white shadow-md  rounded-lg md:p-4">
+        <div className="bg-white shadow-md  rounded-lg md:p-">
           {activePage === "Appointments" && (
            <Appointments />
           )}

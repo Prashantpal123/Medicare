@@ -18,12 +18,14 @@ const Profile = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-blue-100 to-white px-6 py-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-12">
+    <section className="min-h-screen   md:px-6 md:py-10">
+      <div className=" mx-auto flex justify-center  gap-">
 
         {/* Left Sidebar */}
-        <div className="bg-white shadow-xl p-6 rounded-xl flex flex-col items-center border">
-          <figure className="w-32 h-32 rounded-full border-4 border-blue-500 overflow-hidden">
+        <div className="bg-gray-100 shadow-xl p-4  rounded-xl flex gap-4 Md:gap-12 flex-col lg:flex-row w-full justify-between border">
+         <div className='w-full '>
+          <div className='w-full flex-col flex items-center'>
+          <figure className="w-32 h-32 rounded-full flex justify-center border-4 border-blue-500 overflow-hidden">
             <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
           </figure>
           <h3 className="text-xl font-bold text-gray-800 mt-4">{user.name}</h3>
@@ -32,23 +34,31 @@ const Profile = () => {
             Blood Type: <span className="text-lg font-semibold text-red-600">{user.bloodType}</span>
           </p>
 
-          <div className="w-full mt-6 flex flex-col gap-3">
-            <button onClick={handleLogout} className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-md font-semibold transition">
+          <div className=" mt-6 flex  gap-3">
+            <button onClick={handleLogout} className="flex px-8 items-center max-w-[200px] justify-center gap-2 bg-red-600 hover:bg-red-700 text-white  py-3 rounded-md font-semibold transition">
               <FiLogOut className="text-lg" /> Logout
             </button>
-            <button className="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-4 py-3 rounded-md font-semibold transition">
+            <button className="flex items-center max-w-[200px] justify-center gap-2 bg-gray-900 hover:bg-gray-700 text-white px-4 py-3 rounded-md font-semibold transition">
               <MdDelete className="text-lg" /> Delete Account
             </button>
           </div>
+          </div>
+         
+         
+         </div>
+       
 
           {/* Time Slot Component */}
-          <div className="w-full mt-6">
-            <SetTimeSlot className="w-full shadow-md border rounded-lg" />
+          <div className="w-full flex justify-center ">
+            <SetTimeSlot className=" shadow-2xl border rounded-lg" />
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="xl:col-span-2 bg-white shadow-lg p-8 rounded-xl border">
+       
+
+      </div>
+       {/* Right Section */}
+       <div className="xl:col-span-2 bg-white mt-10 md:shadow-none md:border-none  shadow-lg p-2 rounded-xl border">
           {/* Tab Buttons */}
           <div className="flex gap-4 border-b pb-4">
             <button onClick={() => setTab('about')} className={`flex items-center gap-2 px-5 py-2 rounded-md font-semibold transition ${tab === 'about' ? 'bg-blue-600 text-white' : 'text-gray-700 border border-blue-500 hover:bg-blue-100'}`}>
@@ -65,8 +75,6 @@ const Profile = () => {
             {tab === 'update' && <DoctorProfileUPdate />}
           </div>
         </div>
-
-      </div>
     </section>
   );
 };

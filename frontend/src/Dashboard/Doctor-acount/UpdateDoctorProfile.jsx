@@ -16,7 +16,17 @@ const DoctorProfileUPdate = () => {
     role: 'patient',
     bloodType: '',
     age: '',
-    TicketPrice:''
+    TicketPrice:'',
+      bio:'',
+        about:'',
+          course:'',
+      collegeDate:'',
+      college:'',
+      specialization:'',
+      exprole:'',
+      hospital:'',
+      expDate:'' ,   
+    
   });
   const [previewSrc, setPreviewSrc] = useState(null);
   const navigate = useNavigate();
@@ -32,7 +42,10 @@ const DoctorProfileUPdate = () => {
         role: user.role || 'patient',
         bloodType: user.bloodType || '',
         age: user.age || '',
-        TicketPrice:user.TicketPrice || ''
+        TicketPrice:user.TicketPrice || '',
+        bio:user.bio||'',
+        about:user.about||'',
+      
         
       });
       setPreviewSrc(user.photo || null);
@@ -55,7 +68,7 @@ const DoctorProfileUPdate = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     try {
-      const res = await fetch(`${BASE_URL}/api/v1/users/${user._id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/doctors/${user._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +94,7 @@ const DoctorProfileUPdate = () => {
 
   return (
     <div className='mt-5  rounded-ful'>
-      <form onSubmit={submitHandler} className=' md:p-4  md:bg-slate-300 rounded-md'>
+      <form onSubmit={submitHandler} className=' md:p-4   rounded-md'>
         <div className='mb-5 md:mt-3'>
           <input
             type='text'
@@ -90,7 +103,7 @@ const DoctorProfileUPdate = () => {
             value={formData.name}
             required 
             onChange={handleInputChange}
-            className='w-full px-4 py-3  border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3  border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
         <div className='mb-5'>
@@ -101,7 +114,7 @@ const DoctorProfileUPdate = () => {
             value={formData.email}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
         <div className='mb-5'>
@@ -112,21 +125,30 @@ const DoctorProfileUPdate = () => {
             value={formData.password}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
-        <div className='mb-5'>
-          <input
+        <div className='mb-5 grid grid-cols-2 gap-10'>
+        <input
             type='number'
             placeholder='Age'
             name='age'
             value={formData.age}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+           <input
+            type='text'
+            placeholder='Enter Your Specialization'
+            name='specialization'
+            value={formData.specialization}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
-        <div className='mb-5'>
+        <div className='mb-5 grid grid-cols-2 gap-10'>
           <input
             type='number'
             placeholder='Enter Your TicketPrice'
@@ -134,10 +156,9 @@ const DoctorProfileUPdate = () => {
             value={formData.TicketPrice}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
-        </div>
-        <div className='mb-5'>
+        
           <input
             type='text'
             placeholder='Blood Type'
@@ -145,19 +166,11 @@ const DoctorProfileUPdate = () => {
             value={formData.bloodType}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
         <div className='mb-5'>
-          <input
-            type='text'
-            placeholder='Enter Your Specialization'
-            name='specialization'
-            value={formData.specialization}
-            required
-            onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
-          />
+         
         </div>
         <div className='mb-5'>
           <input
@@ -167,9 +180,76 @@ const DoctorProfileUPdate = () => {
             value={formData.bio}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
+        <h1 className='font-semibold text-lg text-[#524f4f]'>Education Detail</h1>
+
+        <div className='mb-5 grid grid-cols-2 gap-y-2 md:gap-x-10'>
+          <input
+            type='text'
+            placeholder='Course'
+            name='course'
+            value={formData.course}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+            <input
+            type='text'
+            placeholder='College'
+            name='college'
+            value={formData.college}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+            <input
+            type='text'
+            placeholder='date'
+            name=''
+            value={formData.collegeDate}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+         
+
+        <h1 className='font-semibold text-lg text-[#524f4f]'>Experience Details</h1>
+
+        <div className='mb-5 grid grid-cols-2 gap-y-2 md:gap-x-10'>
+          <input
+            type='text'
+            placeholder='Role'
+            name='exprole'
+            value={formData.exprole}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+            <input
+            type='text'
+            placeholder='Hospital'
+            name='hospital'
+            value={formData.hospital}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+            <input
+            type='text'
+            placeholder='date'
+            name='expDate'
+            value={formData.expDate}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+        </div>
+
+        
+
         <div className='mb-5'>
           <textarea
             rows={5}
@@ -179,14 +259,14 @@ const DoctorProfileUPdate = () => {
             value={formData.about}
             required
             onChange={handleInputChange}
-            className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
         <div className='flex md:flex-row flex-col md:justify-between'>
 
         <div className='mb-5 flex items-center gap-3'>
           {previewSrc && (
-            <figure className='w-[50px] h-[50px] rounded-full border-2 border-solid border-sky-600 flex items-center justify-center'>
+            <figure className='w-[50px] h-[50px] rounded-full border border-solid border-sky-600 flex items-center justify-center'>
               <img
                 className='w-[50px] h-[50px] rounded-full'
                 src={previewSrc}
