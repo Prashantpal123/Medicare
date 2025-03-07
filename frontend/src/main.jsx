@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import React from 'react'
 
-import "react-toastify/ReactToastify.css"
+
 import { AuthContextProvider } from './context/Authcontext.jsx'
 createRoot(document.getElementById('root')).render(
 
