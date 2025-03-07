@@ -11,8 +11,7 @@ createRoot(document.getElementById('root')).render(
 
     <BrowserRouter>
 <AuthContextProvider>
-     <ToastContainer theme='dark'
-    />
+     
  
    
     <App />
