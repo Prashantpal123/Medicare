@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BASE_URL } from '../../config';
 import Doctor_card from './../../components/Doctors/Doctor_card';
-import UseFetchData from '../../Hooks/UseFetchData.jsx';
+import UseFetchData from '../../Hooks/UseFetchData';
  
 const Doctors = () => {
   const { data, loading, error } = UseFetchData(`${BASE_URL}/api/v1/doctors/`);
