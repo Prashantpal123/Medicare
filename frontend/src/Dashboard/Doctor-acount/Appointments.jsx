@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetchData from '../../Hooks/usefetchData';
+import UseFetchData from '../../Hooks/UseFetchData';
 import { BASE_URL } from '../../config';
 
 
@@ -7,7 +7,7 @@ const Appointments = () => {
 
 
 
-  const { data, loading, error,  } =  useFetchData(`${BASE_URL}/api/v1/bookings/approved`);
+  const { data, loading, error,  } =  UseFetchData(`${BASE_URL}/api/v1/bookings/approved`);
    
     
   if (loading) return <div>Loading...</div>; // Show loading message while fetching

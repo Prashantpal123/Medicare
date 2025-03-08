@@ -4,14 +4,14 @@ import { authContext } from '../../context/Authcontext'
 import userImg from "../../assets/doctor-img01.png"
 import MyBookings from './MyBookings'
 import Profile from './Profile'
-import useFetchData from '../../Hooks/useFetchData'
+import UseFetchData from '../../Hooks/UseFetchData'
 import { BASE_URL } from '../../config'
 
 const MyAcount = () => {
   const {dispatch,user}= useContext(authContext)
   console.log(user)
   const [tab, settab] = useState("bookings")
-  const {data:userData,loading,error}=useFetchData(`${BASE_URL}/users/profile/me`);
+  const {data:userData,loading,error}=UseFetchData(`${BASE_URL}/users/profile/me`);
   console.log(userData,"userdata");
   const handleLogout=()=>{
     dispatch({type:"LOGOUT"})

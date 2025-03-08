@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useState } from 'react';
 import { FaUserMd, FaCalendarCheck, FaUsers } from "react-icons/fa";
-import useFetchData from '../../Hooks/usefetchData';
+import UseFetchData from '../../Hooks/UseFetchData';
 import { BASE_URL } from '../../config';
 import ConfirmAppointmentModal from './ConfirmationAppointment';
 import { authContext } from '../../context/Authcontext';
@@ -44,7 +44,7 @@ const doctorId = user?.id;
 
 // Pass the API URL to the hook
 
-    const { data, loading, error, refetch } =  useFetchData(`${BASE_URL}/api/v1/bookings/pending`);
+    const { data, loading, error, refetch } =  UseFetchData(`${BASE_URL}/api/v1/bookings/pending`);
    
     
     if (loading) return <div>Loading...</div>; // Show loading message while fetching

@@ -5,13 +5,13 @@ import { useState } from 'react'
 import Doctor_about from './Doctor_about'
 import Feedback from './Feedback'
 import SidePanel from './SidePanel'
-import useFetchData from '../../Hooks/usefetchData'
+import UseFetchData from '../../Hooks/UseFetchData'
 import { BASE_URL, token } from '../../config'
 import { useParams } from 'react-router-dom'
 const Doctordetail =  () => {
   const { id } = useParams();
  const [tab, settab] = useState()
- const { data, loading, error } = useFetchData(`${BASE_URL}/api/v1/doctors/${id}`);
+ const { data, loading, error } = UseFetchData(`${BASE_URL}/api/v1/doctors/${id}`);
  if (loading) return <div>Loading...</div>; // Show loading message while fetching
  if (error) return <div>Error: {error}</div>;
 
