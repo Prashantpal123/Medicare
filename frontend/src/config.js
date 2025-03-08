@@ -1,2 +1,2 @@
-export const BASE_URL="http://localhost:5000"
+export const BASE_URL="https://medicare-n7vh.onrender.com/"
 export const token =localStorage.getItem("token")
