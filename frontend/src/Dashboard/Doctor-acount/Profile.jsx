@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { toast } from 'react-toastify';
+
 import { authContext } from '../../context/Authcontext';
 import Doctor_about from '../../pages/Doctors/Doctor_about';
 import MyDetails from './MyDetails';
@@ -14,7 +14,7 @@ const Profile = () => {
 
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });
-    toast.success('Logged out successfully!');
+  
   };
 
   return (
