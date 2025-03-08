@@ -1,4 +1,4 @@
-import useFetchData from "../../Hooks/useFetchData";
+import UseFetchData from "../../Hooks/UseFetchData";
 import { BASE_URL } from "../../config";
 import DoctorCard from "./../../components/Doctors/Doctor_card"
 
@@ -7,7 +7,7 @@ const MyBookings = () => {
     data: appointments,
     loading,
     error,
-  } = useFetchData(`${BASE_URL}/users/appointments/my-appointments`);
+  } = UseFetchData(`${BASE_URL}/users/appointments/my-appointments`);
 
   return (
     <div>
