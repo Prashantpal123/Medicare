@@ -5,7 +5,7 @@ import Routers from '../routes/Routers'
 
 const Layout = () => {
   return (
-    <div className=''>
+    <div className=' flex flex-col min-h-screen'>
      <Header/>
      <main>
         <Routers/>
