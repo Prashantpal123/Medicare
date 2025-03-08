@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 import { BASE_URL } from '../../config';
 import uploadImageToCloudinary from '../../../utils/uploadCloudinary';
 import { authContext } from '../../context/Authcontext';
@@ -84,11 +84,11 @@ const DoctorProfileUPdate = () => {
         throw new Error(message);
       }
 
-      toast.success(message);
+     
       navigate('/users/profile/me');
     } catch (error) {
       console.error('Error in updating profile:', error);
-      toast.error(error.message || 'Something went wrong. Please try again.');
+    
     }
   };
 
