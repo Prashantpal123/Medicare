@@ -4,7 +4,7 @@ import Doctor_card from './../../components/Doctors/Doctor_card';
 import UseFetchData from '../../Hooks/UseFetchData';
  
 const Doctors = () => {
-  const { data, loading, error } = UseFetchData(`${BASE_URL}api/v1/doctors`);
+  const { data, loading, error } = UseFetchData(`${BASE_URL}/api/v1/doctors`);
   const [searchQuery, setSearchQuery] = useState('');
 
   if (loading) return <div className='text-center text-gray-700 font-semibold mt-20 animate-pulse'>Loading...</div>;
