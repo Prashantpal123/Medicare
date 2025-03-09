@@ -19,7 +19,7 @@ const About = () => {
 
 <div className='lg:max-w-[500px]   lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
   <div><h1 className='font-[700] text-[20px] md:text-[30px] leading-none'>Proud To Be One Of The Nations Best</h1></div>
-  <div className='relative sm:hidden mt-3 z-10 flex justify-center max-w-[600px] '>
+  <div className='relative sm:hidden mt-3 z-10 flex justify-centerq max-w-[600px] '>
     <img src={doctor} alt="" className='object- ' />
     
   </div>

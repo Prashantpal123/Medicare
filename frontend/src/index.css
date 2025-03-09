@@ -11,7 +11,9 @@
     .hero_container{
         @apply bg-[url('./assets/hero-bg.png')] bg-no-repeat bg-center bg-cover w-full
     }
-
+  .feature_container{
+        @apply bg-[url('./assets/hero-bg.png')] bg-no-repeat bg-center bg-cover
+    }
     .form_label{
        @apply font-semibold text-[16px] leading-7 mb-2
 

@@ -79,8 +79,8 @@ const Home = () => {
 
 
       {/*process container&*/}
-      <div className='flex justify-center bg-gradient-to-b from-blue-50 to-white py-8'>
-  <div className='process_container w-full max-w-[1100px] flex flex-col mt-12 md:mt-24 px-4 text-center'>
+      <div className='flex  justify-center bg-gradient-to-b from-blue-50 to-white md:py-8'>
+  <div className='process_container w-full max-w-[1100px] flex flex-col mt-1 md:mt-24 px-4 text-center'>
     <div className='w-full'>
       <div className='flex justify-center'>
         <h1 className='font-semibold text-[23px] md:font-bold md:text-[35px] leading-8 md:leading-[60px] text-gray-800'>
@@ -154,7 +154,7 @@ const Home = () => {
 
       {/*service section start*/}
      
-      <div classname="service_container md:mt-24 bg-gradient-to-b from-blue-50 to-white  ">
+      <div classname=" service_container md:mt-24 bg-gradient-to-b from-blue-50 to-white  ">
 
       <div className='mt-8 md:mt-24'>
   <h1 className='font-[700] leading-8 text-[30px] text-center'> Our Medical services</h1>
@@ -180,7 +180,7 @@ const Home = () => {
 
       {/*feature section*/}
 
-      <div className='feature_container  mt-8 md:mt-16  flex flex-col sm:flex-row mx-3  lg:justify-center gap-4 lg:gap-36  '>
+      <div className='feature_container   mt-8 md:mt-16  flex flex-col sm:flex-row mx-3  lg:justify-center gap-4 lg:gap-36  '>
 
 
       <div className=' mx-1 md:w-full block sm:hidden lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
