@@ -20,45 +20,55 @@ const Home = () => {
   return (
     <>
 
-      <div className='hero_container  mt-12  flex flex-col lg:flex-row  lg:justify-center gap-4 lg:gap-16 '>
+      <div className='hero_container    flex flex-col md:flex-row  lg:justify-center gap-4 lg:gap-16 '>
+
+     
+    
 
 
-
-
-
-        <div className='lg:max-w-[500px]  mx-3 lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2 '>
+        <div className='lg:max-w-[500px]   mx-3 lg:pt-[50px] md:pt-[5px]  mt-12 '>
+          
           <div className='flex flex-col lg:gap-3' >
-            <h1 className='font-[700] text-[20px] md:text-[40px] md:leading-none'>We Help Patients Live a Healthy longer Life ,Book Your Appoinmet Now |</h1>
-            <p className='md:text-[20px] md:mt-4 mt-2' >Lorem ipsum dolor sit amet consectetur, adipisicing elit
+            <h1 className='font-[700] text-[20px] mt-2 md:text-[40px] leading-6 md:leading-none'>We Help Patients Live a Healthy longer Life ,Book Your Appoinmet Now |</h1>
+              
+
+            <p className=' sm:hidden'>Lorem ipsum dolor sit amet consectetur, adipg elit
+              . Animi quibusdam voluptate
+              reiciendis that  exercitationem dolor so its  a good service for 
+              , </p>
+            <div className='flex gap-4 md:hidden mx-1  max-w-[400px] lg:pt-[50px] md:mt-16 w-11/12  md:pt-[5px] justify-center'>
+          <img src={hero_doctor1} alt="img" className='w-1/2 h-4/6' />
+          <div className='mt-5 flex flex-col gap-4'>
+            <img src={hero_doctor2} alt="img" />
+            <img src={hero_doctor3} alt="img" />
+          </div>
+
+
+
+        </div>
+
+            <p className='md:text-[20px] md:mt-4  mt-2' > <p className='hidden sm:block'>Lorem ipsum dolor sit amet consectetur, adipisicing elit
               . Animi quibusdam voluptate
               reiciendis tempore exercitationem dolor
               aliquam, quod rem asp
 
-
               eriores amet corrupti omnis possimus quidem
               consequatur neque sit? Et natus eaque doloremque sapiente unde, itaque quo
               architecto earum quam voluptates animi rem veniam similique sint, tempore
-              aspernatur pariatur
-              optio dignissimos eligendi molestiae. Minus, rerum optio. Repudiandae eligendi
-              pariatur at minus
-              consequatur, esse rerum? Nostrum, laudantium ipsam,
+              aspernatur pariatur  optio dignissimos eligendi molestiae. Minus, rerum optio. Repudiandae eligendi
+              pariatur at minus consequatur, esse rerum? Nostrum, laudantium  </p>ipsam,
               suscipit necessitatibus illum facilis asperiores soluta iusto dolore harum sunt.
               Quibusdam sed
               exercitationem lab</p>
             <div className='flex justify-center md:mt-3 mt-3  '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Book Apoinment Now</button>
             </div>
 
-            {/*achivment*/}
-
-            
-
-
           </div>
 
 
         </div>
 
-        <div className='flex gap-4 mx-1 lg:max-w-[500px] lg:pt-[50px] md:mt-16 w-11/12  md:pt-[5px] justify-center'>
+        <div className='md:flex gap-4 hidden mx-1 min-w-[450px] lg:max-w-[500px] lg:pt-[50px] md:mt-16 w-11/12  md:pt-[5px] justify-center'>
           <img src={hero_doctor1} alt="img" className='w-1/2 h-4/6' />
           <div className='mt-10 flex flex-col gap-4'>
             <img src={hero_doctor2} alt="img" />
@@ -81,7 +91,7 @@ const Home = () => {
 
 
       {/*process container&*/}
-      <div className='flex justify-center bg-gradient-to-b from-blue-50 to-white '>
+      <div className='  flex justify-center bg-gradient-to-b from-blue-50 to-white '>
       <div className='process_container md:max-w-[1100px] flex mt-12 md:mt-24 flex-col  mx-6  '>
         <div className='md:text-center w-full '>
           <div className='md:flex md:justify-center'>
@@ -229,8 +239,8 @@ const Home = () => {
 
       {/*our doctors section*/}
 
-      <section className="doctor_section flex justify-center  ">
-      <div className='max-w-[1500px] '>
+      <section className="doctor_section flex justify-center mx-3 ">
+      <div className='max-w-[1800px] '>
         <div className='mt-8 md:mt-12 '>
           <h1 className='font-[700] leading-8 text-[30px] text-center'> Our Great Doctors</h1>
 
@@ -248,9 +258,9 @@ const Home = () => {
       </section>
 
 {/*  faq section */}
-<section className="bg-gray-50 py-12 px- rounded-lg shadow-md">
+<section className="bg-gray-50  py-12 px-4 rounded-lg shadow-md">
   <div className="flex justify-center">
-    <div className="flex flex-col lg:flex-row gap-48 max-w-[1100px] w-full">
+    <div className="flex flex-col md:flex-row gap-12 lg:gap-48 max-w-[1100px] w-full">
       {/* Left Side Image - Hidden on Small Screens */}
       <div className="hidden mt-10   md:block flex-shrink-0">
         <img

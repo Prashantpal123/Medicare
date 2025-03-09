@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className='fixed top-0 left-0 w-full bg-[#0d1f3b] shadow-lg z-50 transition-all duration-300 overflow-hidden'>
-      <div className='container mx-auto px-6 py- flex justify-between items-center'>
+      <div className='container mx-auto px-1 py- flex justify-between items-center'>
         {/* Logo */}
         <Link to='/home'>
           <img src={logo} alt='logo' className='md:h-12 filter invert brightness- hover:scale-105 transition-transform duration-300 max-w-full' />
@@ -56,7 +56,7 @@ const Header = () => {
         </nav>
 
         {/* User Profile / Login */}
-        <div className='flex items-center gap-6'>
+        <div className='flex items-center md:gap-6'>
           {token && user ? (
             <Link to={role === "doctor" ? "/doctors/profile/me" : "/users/profile/me"}>
               <img
@@ -66,8 +66,8 @@ const Header = () => {
               />
             </Link>
           ) : (
-            <Link to='/login'>
-              <button className='bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition shadow-md hover:scale-105 duration-300'>
+            <Link to='/login' className='py-2'>
+              <button className='bg-yellow-400 text-gray-900 px-4 py-1 md:px-6 md:py-2 rounded-full font-semibold hover:bg-yellow-500 transition shadow-md hover:scale-105 duration-300'>
                 Login
               </button>
             </Link>

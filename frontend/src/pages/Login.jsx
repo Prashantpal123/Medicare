@@ -62,7 +62,7 @@ const Login = () => {
   };
 
   return (
-    <section className='px-5 lg:px-0 mt-4 md:mt-20'>
+    <section className='px-5 lg:px-0  mt-16 mb-32 md:mt-24'>
       <div className='w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10'>
         <h3 className='text-slate-900 text-[22px] leading-9 font-bold md:mb-8'>
           Hello ! <span className='text-sky-600 '>Welcome</span> Back 🎉

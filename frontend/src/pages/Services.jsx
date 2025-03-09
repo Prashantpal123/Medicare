@@ -7,7 +7,7 @@ const Services = () => {
       
       {/* Title Section */}
       <div className='text-center'>
-        <h1 className='text-4xl font-bold text-gray-800 mb-4 animate-fade-in'>
+        <h1 className='text-4xl font-bold text-gray-800 mb-2 md:mb-4 animate-fade-in'>
           Our Medical Services
         </h1>
         <p className='text-lg text-gray-600 max-w-lg mx-auto leading-relaxed animate-fade-in'>
@@ -16,8 +16,8 @@ const Services = () => {
       </div>
 
       {/* Services List */}
-      <div className='mt-10 w-full flex justify-center animate-fade-in'>
-        <div className='max-w-[1100px] w-full px-6'>
+      <div className='md:mt-10 w-full flex justify-center animate-fade-in'>
+        <div className='max-w-[1100px] w-full md:px-6'>
           <Service_card />
         </div>
       </div>

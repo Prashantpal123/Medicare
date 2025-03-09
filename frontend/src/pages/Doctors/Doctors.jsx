@@ -7,8 +7,8 @@ const Doctors = () => {
   const { data, loading, error } = UseFetchData(`${BASE_URL}/api/v1/doctors/`);
   const [searchQuery, setSearchQuery] = useState('');
 
-  if (loading) return <div className='text-center text-gray-700 font-semibold mt-10 animate-pulse'>Loading...</div>;
-  if (error) return <div className='text-center text-red-500 font-semibold mt-10'>Error: {error}</div>;
+  if (loading) return <div className='text-center text-gray-700 font-semibold mt-20 animate-pulse'>Loading...</div>;
+  if (error) return <div className='text-center text-red-500 font-semibold mt-20'>Error: {error}</div>;
 
   const filteredDoctors = data.data.filter((doctor) =>
     doctor.name.toLowerCase().includes(searchQuery.toLowerCase())

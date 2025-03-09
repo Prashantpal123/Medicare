@@ -82,7 +82,7 @@ const Signup = () => {
 
 
   return (
-    <section className='px-5 xl:px-0'>
+    <section className='px-5 xl:px-0 mt-16 mb-28 md:mt-28 md:mb-32'>
       <div className='max-w-[1100px] md:mt-8 mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/*=======img box ==========*/}

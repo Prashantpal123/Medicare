@@ -2,8 +2,8 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="min-h-screen mt-3 flex items-center justify-center bg-gradient-to-b from-blue-50 to-white py-12 px-6">
-      <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8 animate-fade-in">
+    <section className="min-h-screen mt-6 flex items-center justify-center bg-gradient-to-b from-blue-50 to-white py-12 px-3  md:px-6">
+      <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-3 md:p-8 animate-fade-in">
         {/* Title Section */}
         <h2 className="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
         <p className="text-gray-600 text-center mt-2">
