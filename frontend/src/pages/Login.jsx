@@ -62,12 +62,12 @@ const Login = () => {
   };
 
   return (
-    <section className='px-5 lg:px-0  mt-16 mb-32 md:mt-24'>
+    <section className='md:px-5 px-2 lg:px-0  mt-16 mb-32 md:mt-24'>
       <div className='w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10'>
-        <h3 className='text-slate-900 text-[22px] leading-9 font-bold md:mb-8'>
+        <h3 className= ' mx-2 text-slate-900 text-[22px] leading-9 font-bold md:mb-8'>
           Hello ! <span className='text-sky-600 '>Welcome</span> Back 🎉
         </h3>
-        <form action="" className='py-4 md:py-0' onSubmit={submitHandler}>
+        <form action="" className='py-4 px-3 md:py-0' onSubmit={submitHandler}>
           <div className='mb-5'>
             <input
               type='email'

@@ -36,16 +36,16 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white mt-auto">
       <div className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2  md:grid-cols-4 gap-8">
           {/* Logo and Social Links */}
           <div className="text-center sm:text-left">
             <img src={logo} alt="Logo" className="w-40 mx-auto sm:mx-0" />
             <p className="text-gray-400 mt-4 text-sm">
               &copy; {year} Developed by <strong>Prashant Pal</strong>. All rights reserved.
             </p>
-            <div className="flex justify-center sm:justify-start gap-4 mt-4">
+            <div className="flex justify-center sm:justify-start gap- mt-4">
               {socialLinks.map((item, index) => (
-                <Link key={index} to={item.path} className="p-2 bg-gray-800 rounded-full hover:bg-gray-700">
+                <Link key={index} to={item.path} className="p-1 bg-gray-800 rounded-full hover:bg-gray-700">
                   {item.icon}
                 </Link>
               ))}

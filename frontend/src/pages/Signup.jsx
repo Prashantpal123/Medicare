@@ -82,7 +82,7 @@ const Signup = () => {
 
 
   return (
-    <section className='px-5 xl:px-0 mt-16 mb-28 md:mt-28 md:mb-32'>
+    <section className='md:px-5 px-2 xl:px-0 mt-16 mb-28 md:mt-28 md:mb-32'>
       <div className='max-w-[1100px] md:mt-8 mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           {/*=======img box ==========*/}
@@ -95,13 +95,13 @@ const Signup = () => {
 
 
           {/*=========signup form=======*/}
-          <div className='rounded-l-lg lg:pl-16 md:py-1'>
+          <div className='rounded-md border  p-2 lg:pl-16 md:py-1'>
             <h3 className='text-slate-900 text-[22px] md:text-[30px] leading-9
           font-bold md:mb-4'>
               Create an <span className='text-sky-600'>account</span>
 
             </h3>
-            <form action="" onSubmit={submitHandler}>
+            <form className='' action="" onSubmit={submitHandler}>
               <div className='mb-5'>
                 <input
                   type='text' placeholder='Full Name' name='name' value={formData.name} onChange={handleInputChange} className='w-full px-4 py-3 border-b border-solid 
@@ -151,7 +151,7 @@ const Signup = () => {
           px-32 rounded-[10px] font-[600]'>Signup</button>   </div>
               <p className='mt-5 text-gray-500 text-center '>
                 Already have an account?{" "}
-                <Link to="/register" className='text-sky-600 font-medium ml-1'>Login</Link>
+                <Link to="/login" className='text-sky-600 font-medium ml-1'>Login</Link>
 
               </p>
             </form>

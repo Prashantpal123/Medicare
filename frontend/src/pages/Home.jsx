@@ -33,8 +33,8 @@ const Home = () => {
               
 
             <p className=' sm:hidden'>Lorem ipsum dolor sit amet consectetur, adipg elit
-              . Animi quibusdam voluptate
-              reiciendis that  exercitationem dolor so its  a good service for 
+              . Animi quib usdam volup tate
+              reici endis that  exercit ationem dolor so its  a good service for 
               , </p>
             <div className='flex gap-4 md:hidden mx-1  max-w-[400px] lg:pt-[50px] md:mt-16 w-11/12  md:pt-[5px] justify-center'>
           <img src={hero_doctor1} alt="img" className='w-1/2 h-4/6' />
@@ -49,18 +49,18 @@ const Home = () => {
 
             <p className='md:text-[20px] md:mt-4  mt-2' > <p className='hidden sm:block'>Lorem ipsum dolor sit amet consectetur, adipisicing elit
               . Animi quibusdam voluptate
-              reiciendis tempore exercitationem dolor
+              reiciendis tempore exercita tionem dolor
               aliquam, quod rem asp
 
               eriores amet corrupti omnis possimus quidem
-              consequatur neque sit? Et natus eaque doloremque sapiente unde, itaque quo
-              architecto earum quam voluptates animi rem veniam similique sint, tempore
+              consequatur neque sit? Et natus eaque dolo remque sapi ente unde, itaque quo
+              architecto earum quam voluptates animi rem veniam simi lique sint, tempore
               aspernatur pariatur  optio dignissimos eligendi molestiae. Minus, rerum optio. Repudiandae eligendi
               pariatur at minus consequatur, esse rerum? Nostrum, laudantium  </p>ipsam,
               suscipit necessitatibus illum facilis asperiores soluta iusto dolore harum sunt.
               Quibusdam sed
               exercitationem lab</p>
-            <div className='flex justify-center md:mt-3 mt-3  '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Book Apoinment Now</button>
+            <div className='flex justify-center md:mt-3 mt-3 mb-3 '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Book Apoinment Now</button>
             </div>
 
           </div>

@@ -4,7 +4,7 @@ import FaqItem from "./Faq_item";
 
 const FaqList = () => {
   return (
-    <section className="bg-gray-100 py-4 px-5 rounded-lg shadow-sm">
+    <section className="bg-gray-100 py-4 md:px-5 rounded-lg shadow-sm">
       <div className="max-w-3xl mx-auto">
        
 
