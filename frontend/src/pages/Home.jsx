@@ -94,13 +94,13 @@ const Home = () => {
       </div>
     </div>
 
-    <div className='flex flex-colf md:flex-row w-full justify-center mt-5 md:mt-10 gap-3 md:gap-8 lg:gap-12'>
+    <div className=' grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3  md:flex-row w-full justify-center mt-5 md:mt-10 gap-3 md:gap-8 lg:gap-12'>
       <div className='process_box bg-white shadow-lg rounded-lg p-1 md:p-6 transform hover:scale-105 transition-transform duration-300'>
         <div className='flex justify-center md:mb-4'>
           <img src={process_1} alt='Find a Doctor' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[10px] md:text-[20px] leading-4 md:leading-8 text-center text-gray-800'>Find a Doctor</h1>
-        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[15px] md:text-[20px] leading-4 md:leading-8 text-center text-gray-800'>Find a Doctor</h1>
+        <p className='text-[9px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
         <Link to='/doctors' className='flex justify-center mt-1 md:mt-3'>
@@ -112,8 +112,8 @@ const Home = () => {
         <div className='flex justify-center md:mb-4'>
           <img src={process_2} alt='Find a Location' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[10px] md:text-[20px] md:leading-8 text-center text-gray-800'>Find a Location</h1>
-        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[15px] md:text-[20px] md:leading-8 text-center text-gray-800'>Find a Location</h1>
+        <p className='text-[9px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
         <Link to='/locations' className='flex justify-center mt-1 md:mt-3'>
@@ -125,8 +125,8 @@ const Home = () => {
         <div className='flex justify-center md:mb-4'>
           <img src={process_3} alt='Book Appointment' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[10px] md:text-[20px]  md:leading-8 text-center text-gray-800'>Book Appointment</h1>
-        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[15px] md:text-[20px]  md:leading-8 text-center text-gray-800'>Book Appointment</h1>
+        <p className='text-[9px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
         <Link to='/appointments' className='flex justify-center mt-1 md:mt-3'>
@@ -180,10 +180,10 @@ const Home = () => {
 
       {/*feature section*/}
 
-      <div className='feature_container   mt-8 md:mt-16  flex flex-col sm:flex-row mx-3  lg:justify-center gap-4 lg:gap-36  '>
+      <div className='feature_container   mt-8 md:mt-16  flex flex-col sm:flex-row mx-1  lg:justify-center gap-4 lg:gap-36  '>
 
 
-      <div className=' mx-1 md:w-full block sm:hidden lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
+      <div className='  md:w-full block sm:hidden lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
           <div className='relative z-10 md:w-full md:flex justify-center'>
             <img src={doctor} alt="" className=' w-[400px]' />
 
@@ -212,7 +212,7 @@ const Home = () => {
             </ul>
 
           </div>
-          <div className='flex sm:justify-center md:justify-start md:mt-5 mt-3  '> <button className='bg-sky-700  text-white font-[600] md:text-[20px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Learn More</button>
+          <div className='flex sm:justify-center md:justify-start md:mt-5 mt-3  '> <button className='bg-sky-700  text-white font-[600] md:text-[20px] rounded-full lg:w-4/6 w-full py-2 mt-2 '>Learn More</button>
           </div>
         </div>
 

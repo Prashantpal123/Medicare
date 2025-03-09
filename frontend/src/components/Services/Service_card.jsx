@@ -15,9 +15,9 @@ const ServiceCard = () => {
   return (
     <section className="md:py-12 py-3 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-2 md:px-6">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-16">
           {services.map((service) => (
-            <div key={service.id} className="relative bg-white shadow-lg rounded-xl p-1 md:p-6 border border-gray-200 transition-transform hover:scale-105">
+            <div key={service.id} className="relative bg-white shadow-lg rounded-xl p-2 md:p-6 border border-gray-200 transition-transform hover:scale-105">
               <h2 className="text-xl font-bold text-gray-800">{service.title}</h2>
               <p className="text-gray-600 text-[13px] mt-2">
                 World-class care for everyone. Our health system offers unmatched expert health care.
