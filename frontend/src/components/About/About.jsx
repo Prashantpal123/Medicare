@@ -10,7 +10,7 @@ const About = () => {
 
 <div className='lg:max-w-[900px] mx-1 lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
   <div className='relative  hidden z-10 sm:block   justify-center '>
-    <img src={doctor} alt="" className=' min-w-[350px]' />
+    <img src={doctor} alt="" className=' min-w-[400px]' />
     
   </div>
  
@@ -19,8 +19,8 @@ const About = () => {
 
 <div className='lg:max-w-[500px]   lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
   <div><h1 className='font-[700] text-[20px] md:text-[30px] leading-none'>Proud To Be One Of The Nations Best</h1></div>
-  <div className='relative sm:hidden mt-3 z-10 flex justify-centerq max-w-[600px] '>
-    <img src={doctor} alt="" className='object- ' />
+  <div className='relative sm:hidden mt-3  flex w-full max-w-[500px] '>
+    <img src={doctor} alt="" className='w-[400px]' />
     
   </div>
   <div><p className='mt-4 md:text-[15px]'>For 30 years in a row , Us News & World Report has recognized as one of 
@@ -34,7 +34,7 @@ const About = () => {
       asperiores possimus est veniam minus optio ipsum perspiciatis ullam nam alias.</p>
     </p>
     </div>
-    <div className='flex justify-center md:mt-5 mt-3  '> <button className='bg-sky-700 hover:bg-sky-800  text-white font-[600] md:text-[15px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Learn More</button>
+    <div className='flex justify-center md:mt-5 mt-3  '> <button className='bg-sky-700 hover:bg-sky-800  text-white font-[600] md:text-[15px] rounded-full lg:w-4/6 w-full  py-2 mt-2 '>Learn More</button>
     </div>
 </div>
 

@@ -48,7 +48,7 @@ const Home = () => {
               suscipit necessitatibus illum facilis asperiores soluta iusto dolore harum sunt.
               Quibusdam sed
               exercitationem lab</p>
-            <div className='flex justify-center md:mt-3 mt-3 mb-3 '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-4/5 py-2 mt-2 '>Book Apoinment Now</button>
+            <div className='flex justify-center md:mt-3 mt-3 mb-3 '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-full mx-1 md:mx-0 py-2 mt-2 '>Book Apoinment Now</button>
             </div>
 
           </div>
@@ -94,43 +94,43 @@ const Home = () => {
       </div>
     </div>
 
-    <div className='flex flex-col md:flex-row w-full justify-center mt-5 md:mt-10 gap-8 lg:gap-12'>
-      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
-        <div className='flex justify-center mb-4'>
+    <div className='flex flex-colf md:flex-row w-full justify-center mt-5 md:mt-10 gap-3 md:gap-8 lg:gap-12'>
+      <div className='process_box bg-white shadow-lg rounded-lg p-1 md:p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center md:mb-4'>
           <img src={process_1} alt='Find a Doctor' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Find a Doctor</h1>
-        <p className='text-[16px] leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[10px] md:text-[20px] leading-4 md:leading-8 text-center text-gray-800'>Find a Doctor</h1>
+        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
-        <Link to='/doctors' className='flex justify-center mt-3'>
-          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        <Link to='/doctors' className='flex justify-center mt-1 md:mt-3'>
+          <BsArrowRightCircle className='text-[20px] md:text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
         </Link>
       </div>
 
-      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
-        <div className='flex justify-center mb-4'>
+      <div className='process_box bg-white shadow-lg rounded-lg  p-1 md:p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center md:mb-4'>
           <img src={process_2} alt='Find a Location' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Find a Location</h1>
-        <p className='text-[16px] leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[10px] md:text-[20px] md:leading-8 text-center text-gray-800'>Find a Location</h1>
+        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
-        <Link to='/locations' className='flex justify-center mt-3'>
-          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        <Link to='/locations' className='flex justify-center mt-1 md:mt-3'>
+          <BsArrowRightCircle className='text-[20px] md:text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
         </Link>
       </div>
 
-      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
-        <div className='flex justify-center mb-4'>
+      <div className='process_box bg-white shadow-lg rounded-lg p-1 md:p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center md:mb-4'>
           <img src={process_3} alt='Book Appointment' className='w-16 h-16' />
         </div>
-        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Book Appointment</h1>
-        <p className='text-[16px] leading-7 text-center text-gray-600'>
+        <h1 className='font-bold text-[10px] md:text-[20px]  md:leading-8 text-center text-gray-800'>Book Appointment</h1>
+        <p className='text-[5px] md:text-[16px] md:leading-7 text-center text-gray-600'>
           World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
         </p>
-        <Link to='/appointments' className='flex justify-center mt-3'>
-          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        <Link to='/appointments' className='flex justify-center mt-1 md:mt-3'>
+          <BsArrowRightCircle className='text-[20px] md:text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
         </Link>
       </div>
     </div>
