@@ -20,40 +20,28 @@ const Home = () => {
   return (
     <>
 
-      <div className='hero_container    flex flex-col md:flex-row  lg:justify-center gap-4 lg:gap-16 '>
+      <div className='hero_container pb-3   flex flex-col md:flex-row  lg:justify-center gap-4 lg:gap-16 '>
 
      
     
 
 
-        <div className='lg:max-w-[500px]   mx-3 lg:pt-[50px] md:pt-[5px]  mt-12 '>
+        <div className='lg:max-w-[500px] mx-1  md:mx-3 lg:pt-[50px] md:pt-[5px]  mt-12 '>
           
           <div className='flex flex-col lg:gap-3' >
-            <h1 className='font-[700] text-[20px] mt-2 md:text-[40px] leading-6 md:leading-none'>We Help Patients Live a Healthy longer Life ,Book Your Appoinmet Now |</h1>
+            <h1 className='font-[700] text-[18px] mt-2 md:text-[30px] leading-6 md:leading-9'>We Help Patients Live a Healthy longer Life ,Book Your Appoinmet Now |</h1>
               
 
-            <p className=' sm:hidden'>Lorem ipsum dolor sit amet consectetur, adipg elit
-              . Animi quib usdam volup tate
-              reici endis that  exercit ationem dolor so its  a good service for 
-              , </p>
-            <div className='flex gap-4 md:hidden mx-1  max-w-[400px] lg:pt-[50px] md:mt-16 w-11/12  md:pt-[5px] justify-center'>
-          <img src={hero_doctor1} alt="img" className='w-1/2 h-4/6' />
-          <div className='mt-5 flex flex-col gap-4'>
-            <img src={hero_doctor2} alt="img" />
-            <img src={hero_doctor3} alt="img" />
-          </div>
+        
+       
 
-
-
-        </div>
-
-            <p className='md:text-[20px] md:mt-4  mt-2' > <p className='hidden sm:block'>Lorem ipsum dolor sit amet consectetur, adipisicing elit
+            <p className='md:text-[20px] md:mt-4   ' > Lorem ipsum dolor sit amet consectetur, adipisi cing elit
               . Animi quibusdam voluptate
-              reiciendis tempore exercita tionem dolor
-              aliquam, quod rem asp
+              reiciendis temp ore exercita tionem dolor
+              ali quam, quod rem asp
 
               eriores amet corrupti omnis possimus quidem
-              consequatur neque sit? Et natus eaque dolo remque sapi ente unde, itaque quo
+              consequatur neque sit?<p className='hidden'> Et natus eaque dolo remque sapi ente unde, itaque quo
               architecto earum quam voluptates animi rem veniam simi lique sint, tempore
               aspernatur pariatur  optio dignissimos eligendi molestiae. Minus, rerum optio. Repudiandae eligendi
               pariatur at minus consequatur, esse rerum? Nostrum, laudantium  </p>ipsam,
@@ -91,67 +79,66 @@ const Home = () => {
 
 
       {/*process container&*/}
-      <div className='  flex justify-center bg-gradient-to-b from-blue-50 to-white '>
-      <div className='process_container md:max-w-[1100px] flex mt-12 md:mt-24 flex-col  mx-6  '>
-        <div className='md:text-center w-full '>
-          <div className='md:flex md:justify-center'>
-            <h1 className='md:font-[700] md:text-[35px] text-[25px] font-[600] flex md:justify-center md:leading-[60px] leading-8  mlg:w-1/4'>Providing The Best Medical Services</h1> </div>
-          <div className=' flex justify-center mt-2  '><p className='md:text-[15px]   lg:w-1/3'>World-class care for everyone our health system offers unmatched expert health care</p> </div>
-
-
-
-        </div>
-
-
-        <div className='flex md:flex-row flex-col w-full justify-center mt-5 md:mt-10 gap-12 lg:gap-24'>
-
-
-          <div className='process_box'>
-
-            <div className='flex justify-center'><img src={process_1} alt="" /></div>
-            <h1 className='font-[700] leading-8 text-[20px] text-center'>Find a Doctor</h1>
-            <p className='text-[16px] leading-7 lg:max-w-80 text-center  '>World-class care for everyone our health system offers unmatched expert health care Book Now !</p>
-            <Link to="/doctors" className='flex justify-center mt-3 '>
-              <BsArrowRightCircle className='text-[40px] hover:text-[45px] text-gray-700 hover:bg-blue-700 rounded-full  hover:text-white  hover:border-black ' />
-
-            </Link>
-
-          </div>
-
-
-          <div className='process_box'>
-
-            <div className='flex justify-center'><img src={process_2} alt="" /></div>
-            <h1 className='font-[700] leading-8 text-[20px] text-center'>Find a Location</h1>
-            <p className='text-[16px]   leading-7 lg:max-w-80 text-center '>World-class care for everyone our health system offers unmatched expert health care Book Now !</p>
-            <Link to="/doctors" className='flex justify-center mt-3 '>
-              <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-            </Link>
-
-          </div>
-
-          <div className='process_box'>
-
-            <div className='flex justify-center'><img src={process_3} alt="" /></div>
-            <h1 className='font-[700] leading-8 text-[20px] text-center mt-2'>Book  Appoinnment</h1>
-            <p className='text-[16px] leading-7 lg:max-w-80 text-center '>World-class care for everyone our health system offers unmatched expert health care Book Now !</p>
-            <Link to="/doctors" className='flex justify-center mt-3 '>
-              <BsArrowRightCircle className='text-[40px] text-gray-700 hover:bg-blue-700 rounded-full hover:text-white hover:border-black ' />
-
-            </Link>
-
-          </div>
-
-
-
-
-
-        </div>
-
-
+      <div className='flex justify-center bg-gradient-to-b from-blue-50 to-white py-8'>
+  <div className='process_container w-full max-w-[1100px] flex flex-col mt-12 md:mt-24 px-4 text-center'>
+    <div className='w-full'>
+      <div className='flex justify-center'>
+        <h1 className='font-semibold text-[23px] md:font-bold md:text-[35px] leading-8 md:leading-[60px] text-gray-800'>
+          Providing The Best Medical Services
+        </h1>
       </div>
+      <div className='flex justify-center mt-2'>
+        <p className='text-[15px] md:text-[15px] lg:w-1/3 text-gray-600'>
+          World-class care for everyone. Our health system offers unmatched expert health care.
+        </p>
       </div>
+    </div>
+
+    <div className='flex flex-col md:flex-row w-full justify-center mt-5 md:mt-10 gap-8 lg:gap-12'>
+      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center mb-4'>
+          <img src={process_1} alt='Find a Doctor' className='w-16 h-16' />
+        </div>
+        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Find a Doctor</h1>
+        <p className='text-[16px] leading-7 text-center text-gray-600'>
+          World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
+        </p>
+        <Link to='/doctors' className='flex justify-center mt-3'>
+          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        </Link>
+      </div>
+
+      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center mb-4'>
+          <img src={process_2} alt='Find a Location' className='w-16 h-16' />
+        </div>
+        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Find a Location</h1>
+        <p className='text-[16px] leading-7 text-center text-gray-600'>
+          World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
+        </p>
+        <Link to='/locations' className='flex justify-center mt-3'>
+          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        </Link>
+      </div>
+
+      <div className='process_box bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex justify-center mb-4'>
+          <img src={process_3} alt='Book Appointment' className='w-16 h-16' />
+        </div>
+        <h1 className='font-bold text-[20px] leading-8 text-center text-gray-800'>Book Appointment</h1>
+        <p className='text-[16px] leading-7 text-center text-gray-600'>
+          World-class care for everyone. Our health system offers unmatched expert health care. Book Now!
+        </p>
+        <Link to='/appointments' className='flex justify-center mt-3'>
+          <BsArrowRightCircle className='text-[40px] text-blue-500 hover:text-blue-700 transition-colors duration-300' />
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
      
 
@@ -193,17 +180,25 @@ const Home = () => {
 
       {/*feature section*/}
 
-      <div className='feature_container  mt-8 md:mt-16  flex flex-col lg:flex-row mx-3  lg:justify-center gap-4 lg:gap-36  '>
+      <div className='feature_container  mt-8 md:mt-16  flex flex-col sm:flex-row mx-3  lg:justify-center gap-4 lg:gap-36  '>
 
 
+      <div className=' mx-1 md:w-full block sm:hidden lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
+          <div className='relative z-10 md:w-full md:flex justify-center'>
+            <img src={doctor} alt="" className=' w-[400px]' />
+
+          </div>
 
 
-        <div className='lg:max-w-[500px] mx-1 lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
+        </div>
+
+
+        <div className='lg:max-w-[500px]  lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
           <div><h1 className='font-[700] text-[25px] md:text-[35px]  leading-none'>Get virtual treatment any time</h1></div>
           <div>
 
 
-            <ul className='mt-4 md:mt-8 leading-10 text-gray-800 md:text-[20px]'>
+            <ul className='mt-1 md:mt-8 md:leading-10 text-gray-800 md:text-[20px]'>
               <li>(1) Schedule the appointment directly .
               </li>
               <li>
@@ -222,7 +217,7 @@ const Home = () => {
         </div>
 
 
-        <div className=' mx-1 md:w-full lg:w-1/4  flex justify-center lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
+        <div className=' mx-1  md:w-full lg:w-1/4  sm:flex hidden lg:pt-[50px] md:pt-[5px] md:mt-0 mt-2'>
           <div className='relative z-10 md:w-full md:flex justify-center'>
             <img src={doctor} alt="" className=' w-[400px]' />
 

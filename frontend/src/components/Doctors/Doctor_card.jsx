@@ -8,21 +8,21 @@ const Doctor_card = ({ doctor }) => {
   const { name, avgRating, totalRating, photo, specialization, totalPatients, hospital } = doctor;
 
   return (
-    <div className='p-6 bg-gradient-to-b from-white to-gray-100 shadow-xl rounded-2xl transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 border border-gray-200'>
+    <div className='md:p-6 bg-gradient-to-b from-white to-gray-100 shadow-xl rounded-2xl transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 border border-gray-200'>
       {/* Doctor Image */}
       <div className='overflow-hidden rounded-lg'>
-        <img src={photo} alt={name} className='w-full h-[240px] object-cover rounded-lg hover:scale-110 transition-transform duration-300' />
+        <img src={photo} alt={name} className='w-full md:h-[240px] object-cover rounded-lg hover:scale-110 transition-transform duration-300' />
       </div>
 
       {/* Doctor Info */}
-      <h2 className='text-2xl font-bold text-gray-900 mt- '>{name}</h2>
+      <h2 className='md:text-2xl text-lg font-bold text-gray-900 mt- '>{name}</h2>
       <div className='flex items-center justify-between mt-1'>
-        <span className='bg-blue-500 text-white py-1 px-4 text-sm rounded-full font-semibold shadow-md'>
+        <span className='bg-blue-500 text-white py-0 md:py-1 px-1 md:px-4 text-sm rounded-md md:rounded-full font-semibold shadow-md'>
           {specialization}
         </span>
         <div className='flex items-center gap-2 text-yellow-500'>
-          <img src={star} alt='rating' className='w-5 h-5' />
-          <span className='text-lg font-bold'>{avgRating}</span>
+          <img src={star} alt='rating' className='md:w-5 md:h-5 h-4 ' />
+          <span className=' md:text-lg  font-bold'>{avgRating}</span>
           <span className='text-gray-500 text-sm'>({totalRating})</span>
         </div>
       </div>

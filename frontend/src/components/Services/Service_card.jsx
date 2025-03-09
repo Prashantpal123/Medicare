@@ -14,19 +14,19 @@ const services = [
 const ServiceCard = () => {
   return (
     <section className="md:py-12 py-3 bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
+      <div className="container mx-auto px-2 md:px-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-16">
           {services.map((service) => (
-            <div key={service.id} className="relative bg-white shadow-lg rounded-xl p-6 border border-gray-200 transition-transform hover:scale-105">
+            <div key={service.id} className="relative bg-white shadow-lg rounded-xl p-1 md:p-6 border border-gray-200 transition-transform hover:scale-105">
               <h2 className="text-xl font-bold text-gray-800">{service.title}</h2>
-              <p className="text-gray-600 mt-2">
+              <p className="text-gray-600 text-[13px] mt-2">
                 World-class care for everyone. Our health system offers unmatched expert health care.
               </p>
-              <div className="flex items-center justify-between mt-5">
+              <div className="flex items-center justify-between mt-2 md:mt-5">
                 <Link to="/doctors" className="flex items-center text-gray-700 hover:text-blue-600 transition">
-                  <BsArrowRightCircle className="text-4xl" />
+                  <BsArrowRightCircle className="md:text-4xl text-3xl" />
                 </Link>
-                <div className={`w-10 h-10 flex items-center justify-center rounded-full ${service.color} text-white font-bold text-lg`}>
+                <div className={`md:w-10  md:h-10 w-7 h-7 flex items-center justify-center rounded-full ${service.color} text-white font-bold text-lg`}>
                   {service.id}
                 </div>
               </div>
