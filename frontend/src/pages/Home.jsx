@@ -5,7 +5,7 @@ import hero_doctor3 from "../assets/hero-img03.png"
 import process_1 from "../assets/icon01.png"
 import process_2 from "../assets/icon02.png"
 import process_3 from "../assets/icon03.png"
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { BsArrowRightCircle } from "react-icons/bs";
 import Servicelist from '../components/Services/Servicelist'
 import About from '../components/About/About'
@@ -17,10 +17,16 @@ import Patient_review from '../components/Patient_review/Patient_review'
 import Doctor_about from "./Doctors/Doctor_about"
 
 const Home = () => {
+    let navigate=useNavigate();
+   const bookbtn=()=>{
+    navigate('/Doctors')
+  
+   }
+
   return (
     <>
 
-      <div className='hero_container pb-3   flex flex-col md:flex-row  lg:justify-center gap-4 lg:gap-16 '>
+      <div className='hero_container lg:pb-24 pb-4   flex flex-col md:flex-row  lg:justify-center gap-4 lg:gap-16 '>
 
      
     
@@ -48,7 +54,7 @@ const Home = () => {
               suscipit necessitatibus illum facilis asperiores soluta iusto dolore harum sunt.
               Quibusdam sed
               exercitationem lab</p>
-            <div className='flex justify-center md:mt-3 mt-3 mb-3 '> <button className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-full mx-1 md:mx-0 py-2 mt-2 '>Book Apoinment Now</button>
+            <div className='flex justify-center md:mt-3 mt-3 mb-3 '> <button onClick={bookbtn}  className='bg-red-700 hover:bg-red-800 text-white hover:font-[650] font-[600] md:text-[20px] rounded-full lg:w-4/6 w-full mx-1 md:mx-0 py-2 mt-2 '>Book Apoinment Now</button>
             </div>
 
           </div>
