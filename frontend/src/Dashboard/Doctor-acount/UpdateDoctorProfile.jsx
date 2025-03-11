@@ -20,12 +20,14 @@ const DoctorProfileUPdate = () => {
       bio:'',
         about:'',
           course:'',
-      collegeDate:'',
+      collegeDateStart:'',
+      collegeDateEnd:'',
       college:'',
       specialization:'',
       exprole:'',
       hospital:'',
-      expDate:'' ,   
+      expDateStart:'' ,
+      expDateEnd:''   
     
   });
   const [previewSrc, setPreviewSrc] = useState(null);
@@ -45,7 +47,15 @@ const DoctorProfileUPdate = () => {
         TicketPrice:user.TicketPrice || '',
         bio:user.bio||'',
         about:user.about||'',
-      
+        course:user.course||'',
+        collegeDateStart:user.collegeDateStart||'',
+        collegeDateEnd:user.collegeDateEnd||'',
+        college:user.college||'',
+        specialization:user.specialization||'',
+        exprole:user.exprole||'',
+        hospital:user.hospital||'',
+        expDateStart:user.expDateStart||'' ,
+        expDateEnd:user.expDateEnd||''   
         
       });
       setPreviewSrc(user.photo || null);
@@ -66,6 +76,8 @@ const DoctorProfileUPdate = () => {
   };
 
   const submitHandler = async (event) => {
+   
+    
     event.preventDefault();
     try {
       const res = await fetch(`${BASE_URL}/api/v1/doctors/${user._id}`, {
@@ -128,7 +140,7 @@ const DoctorProfileUPdate = () => {
             className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
-        <div className='mb-5 grid grid-cols-2 gap-10'>
+        <div className='mb-5 grid grid-cols-2 gap-2 md:gap-10'>
         <input
             type='number'
             placeholder='Age'
@@ -140,7 +152,7 @@ const DoctorProfileUPdate = () => {
           />
            <input
             type='text'
-            placeholder='Enter Your Specialization'
+            placeholder='Specialization'
             name='specialization'
             value={formData.specialization}
             required
@@ -148,10 +160,10 @@ const DoctorProfileUPdate = () => {
             className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
           />
         </div>
-        <div className='mb-5 grid grid-cols-2 gap-10'>
+        <div className='mb-5 grid grid-cols-2 gap-2 md:gap-10'>
           <input
             type='number'
-            placeholder='Enter Your TicketPrice'
+            placeholder='TicketPrice'
             name='TicketPrice'
             value={formData.TicketPrice}
             required
@@ -185,7 +197,7 @@ const DoctorProfileUPdate = () => {
         </div>
         <h1 className='font-semibold text-lg text-[#524f4f]'>Education Detail</h1>
 
-        <div className='mb-5 grid grid-cols-2 gap-y-2 md:gap-x-10'>
+        <div className='mb-5 grid grid-cols-2 gap-x-2 gap-y-2 md:gap-x-10'>
           <input
             type='text'
             placeholder='Course'
@@ -206,9 +218,18 @@ const DoctorProfileUPdate = () => {
           />
             <input
             type='text'
-            placeholder='date'
-            name=''
-            value={formData.collegeDate}
+            placeholder=' Start date'
+            name='collegeDateStart'
+            value={formData.collegeDateStart}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+           <input
+            type='text'
+            placeholder='End date'
+            name='collegeDateEnd'
+            value={formData.collegeDateEnd}
             required
             onChange={handleInputChange}
             className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
@@ -218,7 +239,7 @@ const DoctorProfileUPdate = () => {
 
         <h1 className='font-semibold text-lg text-[#524f4f]'>Experience Details</h1>
 
-        <div className='mb-5 grid grid-cols-2 gap-y-2 md:gap-x-10'>
+        <div className='mb-5 grid grid-cols-2 gap-y-2 gap-x-2 md:gap-x-10'>
           <input
             type='text'
             placeholder='Role'
@@ -239,9 +260,18 @@ const DoctorProfileUPdate = () => {
           />
             <input
             type='text'
-            placeholder='date'
-            name='expDate'
-            value={formData.expDate}
+            placeholder=' Start date'
+            name='expDateStart'
+            value={formData.expDateStart}
+            required
+            onChange={handleInputChange}
+            className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
+          />
+           <input
+            type='text'
+            placeholder='End date'
+            name='expDateEnd'
+            value={formData.expDateEnd}
             required
             onChange={handleInputChange}
             className='w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px]'
@@ -255,7 +285,7 @@ const DoctorProfileUPdate = () => {
             rows={5}
             type='text'
             placeholder='Enter a Paragraph About Yourself'
-            name='bloodType'
+            name='about'
             value={formData.about}
             required
             onChange={handleInputChange}

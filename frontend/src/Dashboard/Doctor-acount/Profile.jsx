@@ -7,6 +7,7 @@ import DoctorProfileUPdate from './UpdateDoctorProfile';
 import SetTimeSlot from './SetTimeSlot';
 import { FiLogOut, FiUserCheck, FiEdit3 } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
+import { token } from '../../config';
 
 const Profile = () => {
   const { dispatch, user } = useContext(authContext);
@@ -50,7 +51,7 @@ const Profile = () => {
 
           {/* Time Slot Component */}
           <div className="w-full flex justify-center ">
-            <SetTimeSlot className=" shadow-2xl border rounded-lg" />
+            <SetTimeSlot user={user} className=" shadow-2xl border rounded-lg" />
           </div>
         </div>
 

@@ -18,12 +18,13 @@ const DoctorSchema = new mongoose.Schema({
     course:{ type: String,},
    
     college: { type: String }, // Example: "10:00 AM"
-    date: { type: String } // Example: "4:30 PM"
+    startdate: { type: String } ,
+    enddate: { type: String }// Example: "4:30 PM"
   } ],
 
   experience: [   {
-    date:{ type: String,},
-
+    startdate:{ type: String,},
+    enddate:{ type: String,},
     role: { type: String }, // Example: "10:00 AM"
     hospital: { type: String } // Example: "4:30 PM"
   } ],

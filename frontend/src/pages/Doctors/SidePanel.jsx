@@ -103,7 +103,7 @@ const SidePanel = () => {
         </span>
       </div>
 
-      <div className="mt-[30px]">
+      <div className="">
         <p className="text-[16px] lg:text-[20px] mt-0 font-semibold text-slate-900">
           Available Time Slots:
         </p>

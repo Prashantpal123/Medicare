@@ -106,14 +106,14 @@ const doctorId = user?.id;
 
  <div className="bg-white shadow-2xl max-w-[500px]  rounded-2xl p-6 mx-3 border border-gray-200   transition-all hover:shadow-3xl">
       <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">My Appointments</h2>
-      <ul className="divide-y divide-gray-300">
+      <ul className="divide-y  divide-gray-300">
         {appointments.map((appointment, index) => (
           <li
             key={index}
-            className="py-4 flex flex-col justify-between items-start px-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition-all cursor-pointer"
+            className="py-4 flex flex-col justify-between items-start px-4  bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition-all cursor-pointer"
             
           >
-            <div className="flex justify-between w-full">
+            <div className="flex  justify-between w-full">
               <span className="text-gray-900 font-semibold">{appointment.name}</span>
               <span className="text-blue-600 font-medium text-sm">{appointment.time}</span>
             </div>
@@ -129,26 +129,50 @@ const doctorId = user?.id;
     <div className="bg-white shadow-lg max-w-[500px] max-h-[410px] overflow-y-scroll rounded-xl p-4 sm:p-6 mx-3 border border-gray-200 w-full">
       <h2 className="text-lg font-semibold mb-4 text-gray-700 text-center">Appointment Request</h2>
       <div className="space-y-4">
-        {data.map((req, index) => (
-         
-          
-          <div key={req._id} className="flex flex-col sm:flex-row items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 space-y-4 sm:space-y-0 sm:space-x-4">
-            <img
-              src={req.photo}
-              alt={req.name}
-              className="w-12 h-12 rounded-full object-cover border border-gray-300"
-            />
-            <div className="flex-1 text-center sm:text-left">
-              <p className="font-medium text-gray-800">{req.name}</p>
-              <p className="text-gray-500">{req.status}</p>
-            </div>
-            <div className="flex sm:flex-col sm:space-y-2 space-x-2 sm:space-x-0 w-full sm:w-auto justify-center">
-              <button  onClick={() => handleConfirmClick(req)} className="bg-green-500 text-white py-1 px-3 rounded-md font-medium hover:bg-green-600 transition w-full sm:w-auto">Confirm</button>
-              <button className="bg-red-500 text-white py-1 px-3 rounded-md font-medium hover:bg-red-600 transition w-full sm:w-auto">Decline</button>
-            </div>
-          </div>
-        ))}
+  {data.length === 0 ? (
+    <p className="text-gray-500 text-center py-4 bg-gray-50 rounded-lg shadow-sm  border-gray-200">
+      No pending requests
+    </p>
+  ) : (
+    data.map((req) => (
+      <div
+        key={req._id}
+        className="flex flex-col sm:flex-row items-center bg-white p-4 rounded-lg shadow-md border border-gray-300 space-y-4 sm:space-y-0 sm:space-x-4 transition hover:shadow-lg"
+      >
+        {/* Doctor Image */}
+        <img
+          src={req.photo}
+          alt={req.name}
+          className="w-14 h-14 rounded-full object-cover border border-gray-300"
+        />
+
+        {/* Request Details */}
+        <div className="flex-1 text-center sm:text-left">
+          <p className="font-semibold text-gray-900">{req.name}</p>
+          <p className="text-gray-600 text-sm">{req.status}</p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex sm:flex-col sm:space-y-2 space-x-2 sm:space-x-0 w-full sm:w-auto justify-center">
+          <button
+            onClick={() => handleConfirmClick(req)}
+            className="bg-green-600 text-white py-1.5 px-4 rounded-md font-medium hover:bg-green-700 transition-all w-full sm:w-auto"
+            aria-label="Confirm request"
+          >
+            Confirm
+          </button>
+          <button
+            className="bg-red-500 text-white py-1.5 px-4 rounded-md font-medium hover:bg-red-600 transition-all w-full sm:w-auto"
+            aria-label="Decline request"
+          >
+            Decline
+          </button>
+        </div>
       </div>
+    ))
+  )}
+</div>
+
      
     </div>
  {/* Modal */}

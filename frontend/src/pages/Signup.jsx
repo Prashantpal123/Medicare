@@ -121,14 +121,21 @@ const Signup = () => {
                   type='password' placeholder='Password' name='password' value={formData.password} onChange={handleInputChange} className='w-full px-4 py-3 border-b border-solid 
            border-[#0066ff61] focus:outline-none placeholder:text-slate-600 rounded-md cursor-pointer text-gray-600 text-[20px] '  required /> </div>
               <div className='mb-5 flex items-center justify-between'>
+           
+           
+           
                 <label className='text-slate-900 font-bold text-[16px]  leadin-7'>   Are you a <select name="role" id="" value={formData.role}
-                  onChange={handleInputChange} className='text-gray-600 font-semibold text-[15px]   leading-7 px-4 py-3 focus:outline-none'>   <option value="patient">Patient</option>
+                  onChange={handleInputChange} className='text-gray-600 font-semibold text-[15px]   leading-7 px-4 py-3 focus:outline-none'> 
+                     <option >Select</option>
+                    <option value="patient">Patient</option>
                   <option value="doctor">Doctor</option> </select> </label>
                
                
                 <label className='text-slate-900 font-bold text-[16px]   leadin-7'>   Gender <select name="gender" id="
               "    value={formData.gender} onChange={handleInputChange} className='text-gray-600 font-semibold text-[15px]  leading-7 px-4
-              py-3 focus:outline-none'> <option value="Male">Male</option> <option value="Female">Female</option> </select> </label> </div>
+              py-3 focus:outline-none'>
+                 <option >Select</option>
+                 <option value="Male">Male</option> <option value="Female">Female</option> </select> </label> </div>
              
               <div className='mb-5 flex items-center gap-3'>  {selectedfile && <figure className='w-[50px] h-[50px]  rounded-full border-2 border-solid border-sky-600 flex items-center justify-center'>
                 <img className='w-[50px] h-[50px] rounded-full' src={previewUrl} alt="" /> </figure>}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { formateDate } from '../../../utils/formateDate'
+import { data } from 'react-router-dom'
 
 const MyDetails = ({user}) => {
   return (
@@ -15,59 +16,40 @@ const MyDetails = ({user}) => {
           </span>
         </h3>
         <p className='text-gray-600 '>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, adipisci nihil! Sed
-          accusamus dicta tempore doloremquequam nam dolore cumque iusto mollitia quia nihil consequuntur expedita
-          eos ad aliquam atque, facere sapiente est, optiosequi, laudantium vitae modi vel repellendus?
-          Earum, nostrum accusamus libero assumenda repellat incidunt dolores quas? Eveniet exercitationem
-          quae totam nemo tempora molestiae harum cumque veritatis minima, debitis quod perspiciatis praesentium
-          reprehenderit quia excepturi a at ducimus? Asperiores animireprehenderit sunt molestiae numquam. Accusamus digni
-          voluptas, non minus fuga animi voluptates veritatis dicta eveniet magni rem quisquam cupiditate a
-          ex, rerum voluptate dolorum ullam, voluptatibus qui nobis earum! Voluptas, neque nam quide
+         {user.about}
         </p>
       </div>
       <div className='mt-12 '>
         <h3 className='text-[20px] leading-[30px] text-slate-900 
           font-semibold'>
-          Education
+       Education
         </h3>
         <ul className='pt-4 md:p-5'>
-          <li className='flex flex-col sm:flex-row sm:justify-between
-            sm:items-end md:gap-5 mb-[30px]'>
-            <div>
-              <span className='text-sky-400 text-[15px] leading-6 font-semibold
-                '>
-                {formateDate("09-13-2010")} -   {formateDate("05-7-2012")}
+          {user?.education?.map((data,index)=>(
+         <li key={index} className='bg-gray-300 p-2 rounded-md flex flex-col sm:flex-row sm:justify-between
+         sm:items-end md:gap-5 mb-[30px]'>
+         <div>
+           <span className='text-sky-400 text-[15px] leading-6 font-semibold
+             '>
+             {data.startdate} -   {data.enddate}
 
-              </span>
-              <p className='text-[16px] leading-6 font-medium text-slate-700'>
-                PHD in Surgeon
-              </p>
-            </div>
+           </span>
+           <p className='text-[16px] leading-6 font-medium text-slate-700'>
+          {data.course}
+           </p>
+         </div>
 
-            <p className='text-[14px] leading-5 font-medium text-slate-700'>
-              New Apollo Hospital, New York
-            </p>
+         <p className='text-[14px] leading-5 font-medium text-slate-700'>
+          {data.college}
+         </p>
 
-          </li>
+       </li>
+
+          ))}
+         
 
 
-          <li className='flex flex-col sm:flex-row sm:justify-between
-            sm:items-end md:gap-5 mb-[30px]'>
-            <div>
-              <span className='text-sky-400 text-[15px] leading-6 font-semibold
-                '> {formateDate("04-1-2007")} - {formateDate("07-6-2009")}
-
-              </span>
-              <p className='text-[16px] leading-6 font-medium text-slate-700'>
-                PHD in Surgeon
-              </p>
-            </div>
-
-            <p className='text-[14px] leading-5 font-medium text-slate-700'>
-              New Apollo Hospital, New York
-            </p>
-
-          </li>
+       
 
         </ul>
 
@@ -80,33 +62,30 @@ const MyDetails = ({user}) => {
             Experience
           </h3>
           <ul className='grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5'>
-          <li className='p-4 max-w-[350px] rounded bg-[#fff9ea]'>
+          
+
+          {
+            user?.experience?.map((exp,index)=>(
+              <li key={index} className='p-4 max-w-[350px] rounded bg-[#fff9ea]'>
               <span className='text-yellow-500 text-[15px] leading-6 
               font-semibold'>
-                {formateDate("07-04-2010")}- {formateDate("08-13-2014")}
+                {exp.startdate}- {exp.enddate}
 
               </span>
               <p className='text-[15px] leading-6 font-medium text-gray-600'>
-                Sr. Surgeon
+                {exp.role}
               </p>
               <p className='text-[14px] leading-5 font-medium text-slate-700'>
-              New Apollo Hospital, New York
+           {
+            exp.hospital
+           }
             </p>
             </li>
-            <li className='p-4 max-w-[350px] rounded bg-[#fff9ea]'>
-              <span className='text-yellow-500 text-[15px] leading-6 
-              font-semibold'>
-                {formateDate("07-04-2010")}- {formateDate("08-13-2014")}
+            )) 
 
-              </span>
-              <p className='text-[15px] leading-6 font-medium text-gray-600'>
-                Sr. Surgeon
-              </p>
-              <p className='text-[14px] leading-5 font-medium text-slate-700'>
-              New Apollo Hospital, New York
-            </p>
-            </li>
-
+          }
+        
+          
           </ul>
             
       </div>

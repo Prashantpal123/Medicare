@@ -17,7 +17,7 @@ const Doctors = () => {
       <div className="max-w-[1100px] w-full px-6">
         {/* Page Title */}
         <div className="text-center flex flex-col items-center">
-          <h2 className="md:text-4xl text-2xl font-bold text-gray-800 mb-6 animate-fade-in">
+          <h2 className="md:text-4xl text-2xl font-bold text-gray-800 mb-3 0 md:mb-6 animate-fade-in">
             Find a Doctor
           </h2>
 
@@ -37,7 +37,7 @@ const Doctors = () => {
         </div>
 
         {/* Doctors Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 animate-fade-in">
+        <div className="md:mt-12 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 animate-fade-in">
           {loading ? (
             <div className="col-span-full flex justify-center items-center">
               {/* Spinner Loader */}

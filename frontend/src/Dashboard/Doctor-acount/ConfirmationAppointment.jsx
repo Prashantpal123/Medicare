@@ -7,42 +7,36 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
     date: "",
     time: "",
     notes: "",
-    Fees:"",
+    Fees: "",
   });
-  const [Loading, setLoading] = useState(false)
-
-
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
-      setAppointmentDetails({ date: "", time: "", notes: "",Fees:"" });
+      setAppointmentDetails({ date: "", time: "", notes: "", Fees: "" });
     }
   }, [isOpen]);
 
   const handleChange = (e) => {
-    
     setAppointmentDetails({ ...appointmentDetails, [e.target.name]: e.target.value });
   };
- 
- 
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const bookingId=patient._id;
-    console.log(bookingId);
+    const bookingId = patient._id;
     try {
       const response = await fetch(`${BASE_URL}/api/v1/bookings/approved/${bookingId}`, {
-        method: "PUT", // or PATCH
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Fees:appointmentDetails.Fees,
+          Fees: appointmentDetails.Fees,
           date: appointmentDetails.date,
           time: appointmentDetails.time,
           notes: appointmentDetails.notes,
-          status: "Approved", // Update status to Approved
+          status: "Approved",
         }),
       });
 
@@ -50,10 +44,7 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
         throw new Error("Failed to update appointment");
       }
 
-      const updatedAppointment = await response.json();
-      console.log("Updated Appointment:", updatedAppointment);
-
-     // Update the parent component
+      await response.json();
       onClose();
     } catch (error) {
       console.error("Error updating appointment:", error);
@@ -74,6 +65,7 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-600 hover:text-red-500 transition duration-200"
+          disabled={loading}
         >
           <IoClose size={22} />
         </button>
@@ -84,7 +76,7 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-3">
-          <label className="block text-sm cursor-pointer font-medium text-gray-700">
+          <label className="block text-sm font-medium text-gray-700">
             Date:
             <input
               type="date"
@@ -92,7 +84,8 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
               value={appointmentDetails.date}
               onChange={handleChange}
               required
-              className="w-full p-2 border rounded-lg mt-1 focus:ring-2 cursor-pointer  focus:ring-blue-500 focus:outline-none"
+              className="w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              disabled={loading}
             />
           </label>
 
@@ -105,9 +98,10 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
               onChange={handleChange}
               required
               className="w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              disabled={loading}
             />
           </label>
-            
+          
           <label className="block text-sm font-medium text-gray-700">
             Fees:
             <input
@@ -117,6 +111,7 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
               onChange={handleChange}
               required
               className="w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              disabled={loading}
             />
           </label>
 
@@ -127,6 +122,7 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
               value={appointmentDetails.notes}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none h-24"
+              disabled={loading}
             />
           </label>
 
@@ -135,15 +131,17 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
               type="button"
               onClick={onClose}
               className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:text-white hover:bg-red-600 transition duration-200 w-1/2 mr-2"
+              disabled={loading}
             >
               Cancel
             </button>
             <button
               type="submit"
-              onClick={handleSubmit}
-              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg hover:opacity-90 transition duration-200 w-1/2"
+              className="px-4 py-2 text-white rounded-lg w-1/2 transition duration-200 flex justify-center items-center
+                ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-blue-500 to-blue-700 hover:opacity-90'}"
+              disabled={loading}
             >
-              Confirm
+              {loading ? <span className="loader"></span> : "Confirm"}
             </button>
           </div>
         </form>
@@ -153,4 +151,5 @@ const ConfirmAppointmentModal = ({ isOpen, onClose, onConfirm, patient }) => {
 };
 
 export default ConfirmAppointmentModal;
+
 

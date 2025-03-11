@@ -66,7 +66,7 @@ const Profile = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     setUpdatingProfile(true);
-    console.log(formData);
+
     
     
     try {

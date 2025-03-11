@@ -34,7 +34,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 text-white mt-auto">
+    <footer className="bg-gray-900 text-white mt-7">
       <div className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-2  md:grid-cols-4 gap-8">
           {/* Logo and Social Links */}

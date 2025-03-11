@@ -3,7 +3,7 @@ import Service_card from '../components/Services/Service_card';
 
 const Services = () => {
   return (
-    <div className='bg-gradient-to-b mt-3 from-blue-50 to-white py-12 min-h-screen flex flex-col items-center'>
+    <div className='  bg-gradient-to-b mt-3 from-blue-50 to-white py-12 min-h-screen flex flex-col items-center'>
       
       {/* Title Section */}
       <div className='text-center'>

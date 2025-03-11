@@ -25,19 +25,19 @@ const Doctordetail =  () => {
 
 
   return (
-    <div className='max-w-[1270px] px-5 mx-auto md:flex md:justify-between'>
+    <div className='max-w-[1270px] px-5  sm:mt-12 mx-auto md:flex md:justify-between'>
       <div className='grid md:grid-col-3  gap-[50px] md:mt-16 '>
         <div className='md:col-span-2'>
           <div className='flex items-center gap-5'>
-            <figure className=' max-w-[300px] '>
-              <img src={doctor.photo} alt="" />
+            <figure className='max-w-[130px] mt-12 sm:mt-0 sm:max-w-[250px] lg:max-w-[300px] '>
+              <img src={doctor.photo} alt="" className='rounded-md' />
             </figure>
-            <div>
+            <div className='mt-16 sm:mt-0'>
               <span className='bg-[#ccf0f3] text-emerald-400 py-1 px-6 lg:py-2 lg:px-8 text-[12px]
-              leading-4 lg:text-[18px] lg:leading-7 font-semibold rounded'>
+              leading-4 lg:text-[18px]  lg:leading-7 font-semibold rounded'>
                  {doctor.specialization}
               </span>
-              <h3 className='text-slate-900 text-[22px] lg:text-[28px] leading-9 mt-3 font-bold'>
+              <h3 className='text-slate-900 leading-6 md:text-[22px] lg:text-[28px] md:leading-9  mt- font-bold'>
                {doctor.name}
               </h3>
               <div className='flex items-center gap-[6px]'>
@@ -59,7 +59,7 @@ const Doctordetail =  () => {
           </div>
 
 
-          <div className='mt-[50px] border-b border-solid 
+          <div className=' mt-4 md:mt-[50px] border-b border-solid 
           border-[#0066ff34]'>
             <button onClick={()=>settab("about")}
               className={`${ tab=="about" && 'border-b border-solid border-sky-600'} py-2 px-5 mr-5 md:text-[20px] text-[16px] leading-7
@@ -79,7 +79,7 @@ const Doctordetail =  () => {
           </div>
 
 
-          <div className='mt-[50px]'>
+          <div className=' md:mt-[10px]'>
 
           {tab==="about" && <Doctor_about doctor={doctor}/>}
           {tab==="feedback" && <Feedback/>}
