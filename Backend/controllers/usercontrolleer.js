@@ -11,6 +11,8 @@ const generateToken=user=>{
 
 
 export const updateUser = async (req, res) => {
+  console.log("changing");
+  
   const { id } = req.params;
   const { name, email, password, photo, gender, bloodType, age } = req.body;
 

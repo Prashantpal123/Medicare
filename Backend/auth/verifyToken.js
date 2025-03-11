@@ -24,6 +24,8 @@ export const authenticate = async (req, res, next) => {
     // Attach user information to the request object
     req.userId = decoded.id;
     req.role = decoded.role;
+    console.log(" verified to access");
+    
 
     next(); // Move to the next middleware or route
   } catch (err) {
