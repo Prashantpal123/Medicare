@@ -66,6 +66,8 @@ const Profile = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     setUpdatingProfile(true);
+    console.log(formData);
+    
     
     try {
       const res = await fetch(`${BASE_URL}/api/v1/users/${user._id}`, {
