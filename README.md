@@ -2,8 +2,6 @@
 
 Medicare is a full-stack web application built using the **MERN Stack (MongoDB, Express, React, Node.js)** and **Tailwind CSS**. It enables users to find and book appointments with doctors, while doctors can manage and analyze their bookings through a professional dashboard.
 
----
-
 ## 🌟 Features
 
 ### 👤 User Panel
@@ -27,7 +25,7 @@ Medicare is a full-stack web application built using the **MERN Stack (MongoDB, 
 - Contact Us form
 - User-friendly and modern UI/UX
 
----
+
 
 ## 🖥️ Tech Stack
 
@@ -43,13 +41,13 @@ Medicare is a full-stack web application built using the **MERN Stack (MongoDB, 
 - MongoDB + Mongoose
 - JWT for authentication
 
----
+
 
 ## 📷 Screenshots
 
 > You can add your own screenshots here
 
----
+
 
 ## 🚀 Getting Started
 
