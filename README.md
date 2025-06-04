@@ -56,14 +56,25 @@ Medicare is a full-stack web application built using the **MERN Stack (MongoDB, 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/medicare.git
+git clone https://github.com/yourusername/medicare.git 
 cd medicare
+```
 
 ### How to Start
 
+### start frontend server
 ```bash
 cd frontend
 npm install
 npm run dev
+```
+### Start backend server
+### go to backend folder
+```bash
+cd backend
+npm install
+npm start
+```
+
 
 
