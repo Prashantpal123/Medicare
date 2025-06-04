@@ -79,7 +79,7 @@ npm start
 
 - 📧 Email: **prashantpal2026@gmail.com**  
 - 📞 Phone: **+91 93898 88747**  
-- 🔗 LinkedIn: (www.linkedin.com/in/prashantpal01)
+- 🔗 LinkedIn: www.linkedin.com/in/prashantpal01
 
 If you like the project, don’t forget to ⭐ the repository.
 
