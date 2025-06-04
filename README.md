@@ -41,14 +41,6 @@ Medicare is a full-stack web application built using the **MERN Stack (MongoDB, 
 - MongoDB + Mongoose
 - JWT for authentication
 
-
-
-## 📷 Screenshots
-
-> You can add your own screenshots here
-
-
-
 ## 🚀 Getting Started
 
 ### Clone the Repository
