@@ -81,6 +81,7 @@ npm start
 - 📞 Phone: **+91 93898 88747**  
 - 🔗 LinkedIn: [linkedin.com/in/prashantpal01](www.linkedin.com/in/prashantpal01)
 
+If you like the project, don’t forget to ⭐ the repository.
 
 <p align="center">
   Thank you for visiting my profile! Let's connect and collaborate 🤝
