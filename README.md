@@ -1,4 +1,4 @@
-# 🏥 Medicare - Doctor Appointment Booking Platform                    🚀Preview  **https://medicare-d3wvs3ixg-prashant-pals-projects-809dc7e6.vercel.app/**            
+# 🏥 Medicare - Doctor Appointment Booking Platform                               
 
 Medicare is a full-stack web application built using the **MERN Stack (MongoDB, Express, React, Node.js)** and **Tailwind CSS**. It enables users to find and book appointments with doctors, while doctors can manage and analyze their bookings through a professional dashboard.
 
