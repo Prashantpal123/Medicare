@@ -75,6 +75,14 @@ cd backend
 npm install
 npm start
 ```
+## 📬 Contact Me
+
+- 📧 Email: **prashantpal2026@gmail.com**  
+- 📞 Phone: **+91 93898 88747**  
+- 🔗 LinkedIn: [linkedin.com/in/prashantpal01](www.linkedin.com/in/prashantpal01)
 
 
+<p align="center">
+  Thank you for visiting my profile! Let's connect and collaborate 🤝
+</p>
 
