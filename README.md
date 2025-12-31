@@ -6,7 +6,7 @@ Medicare is a full-stack web application built using the **MERN Stack (MongoDB, 
 
 ### 👤 User Panel
 - Create a secure user account
-- Search doctors based on specialization or location
+- Search doctors based on specialization 
 - Send appointment booking requests
 - View booking status and history
 - Submit feedback for doctors
